@@ -1,11 +1,21 @@
-/* eslint-disable */
 const path = require('path');
 require('dotenv').config();
 
+const siteTitle = 'LCAR Auto Detailing';
+const siteDescription = 'Renowacja aut, wynajem aut, modernizacja pojazdów';
+const siteAuthor = 'Filip Lipiński';
+const siteUrl = 'https://www.lcar.pl';
+const siteImage = `${siteUrl}/icons/icon_512x512.png`;
+const siteKeywords = ['gatsby', 'typescript', 'starter', 'javascript', 'react'];
+
 module.exports = {
   siteMetadata: {
-    title: `LCAR Auto Detailing`,
-    author: `Filip Lipiński`,
+    title: siteTitle,
+    description: siteDescription,
+    author: siteAuthor,
+    url: siteUrl,
+    keywords: siteKeywords,
+    image: siteImage,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -39,34 +49,41 @@ module.exports = {
         path: `${__dirname}/src/assets`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `LCAR Auto Detailing`,
-    //     short_name: `LCAR`,
-    //     start_url: `/`,
-    //     background_color: '#FFD226',
-    //     theme_color: '#FFD226',
-    //     display: `minimal-ui`,
-    //     icon: `src/assets/images/favicon.png`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteTitle,
+        short_name: 'LCAR',
+        description: siteDescription,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#000`,
+        display: `minimal-ui`,
+        icon: 'src/assets/images/icon.png',
+        // icons: [
+        //   {
+        //     src: 'icons/icon_512x512.png',
+        //     sizes: '512x512',
+        //     types: 'image/png',
+        //   },
+        //   {
+        //     src: 'icons/icon_192x192.png',
+        //     sizes: '192x192',
+        //     types: 'image/png',
+        //   },
+        // ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
-        // templates: path.join(__dirname, 'src/components/templates'),
-        // sections: path.join(__dirname, 'src/components/sections'),
+        theme: path.join(__dirname, 'src/theme'),
         assets: path.join(__dirname, 'src/assets'),
-        // routes: path.join(__dirname, 'src/routes'),
         vendors: path.join(__dirname, 'src/vendors'),
-        // utils: path.join(__dirname, 'src/utils'),
-        // contexts: path.join(__dirname, 'src/contexts'),
-        // providers: path.join(__dirname, 'src/providers'),
-        // hooks: path.join(__dirname, 'src/hooks'),
-        // helpers: path.join(__dirname, 'src/helpers'),
+        styles: path.join(__dirname, 'src/styles'),
       },
     },
     {
@@ -78,5 +95,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    // {
+    //   resolve: `gatsby-plugin-graphql-codegen`,
+    //   options: {
+    //     fileName: `./graphql-types.ts`,
+    //   },
+    // },
   ],
 };

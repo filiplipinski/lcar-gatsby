@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: inherit;
+    font-family: 'Sen', sans-serif;
   }
   
   body {
