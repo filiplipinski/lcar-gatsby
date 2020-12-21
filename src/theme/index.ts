@@ -39,7 +39,7 @@ const colors = {
     paper: '#fafafa',
   },
   succes: 'green',
-  error: '#C02811',
+  red: 'red',
   common: {
     white: 'hsl(0, 0%, 100%)',
     black: 'hsl(0, 0%, 0%)',
@@ -60,10 +60,9 @@ const font = {
     button: '1.5rem',
   },
   weight: {
-    light: 300,
     regular: 400,
-    medium: 500,
-    bold: 600,
+    bold: 700,
+    extraBold: 800,
   },
 };
 

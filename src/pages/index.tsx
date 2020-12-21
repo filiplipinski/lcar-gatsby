@@ -1,33 +1,65 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { HeroImageQuery } from '../../graphql-types';
+
+import { Container } from 'components/container/Container';
 import * as S from 'styles/index.styles';
 
+import { HeroImgQuery } from '../../graphql-types';
+
 interface Props {
-  data: HeroImageQuery;
+  data: HeroImgQuery;
 }
 
 const IndexPage: React.FC<Props> = ({ data }) => {
-  const heroImgFluid = data.file?.childImageSharp?.fluid;
+  const bannerFluid = useMemo(() => {
+    const foundImg = data.allFile.edges.find((edge) => edge.node.childImageSharp?.fluid?.originalName === 'banner.jpg');
+    return foundImg?.node.childImageSharp?.fluid;
+  }, []);
+
+  const bannerShadowFluid = useMemo(() => {
+    const foundImg = data.allFile.edges.find((edge) => edge.node.childImageSharp?.fluid?.originalName === 'banner-shadow.png');
+    return foundImg?.node.childImageSharp?.fluid;
+  }, []);
+
   return (
-    <S.Wrapper>
-      <p>hello tu index</p>
-      {heroImgFluid && (
+    <>
+      {bannerFluid && bannerShadowFluid && (
         <S.ImageWrapper>
-          <Img fluid={heroImgFluid} />
+          <S.TextBox>
+            <div>
+              1<S.Dot>.</S.Dot> <span>Profesjonalizm</span>
+            </div>
+            <div>
+              2<S.Dot>.</S.Dot> <span>Staranność</span>
+            </div>
+            <div>
+              3<S.Dot>.</S.Dot> <span>Dokładność</span>
+            </div>
+          </S.TextBox>
+
+          <Img fluid={bannerFluid} />
+
+          <S.Img fluid={bannerShadowFluid} />
         </S.ImageWrapper>
       )}
-    </S.Wrapper>
+
+      <Container>{/* content here */}</Container>
+    </>
   );
 };
 
 export const query = graphql`
-  query HeroImage {
-    file(name: { regex: "/hero/" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 90) {
-          ...GatsbyImageSharpFluid_noBase64
+  query HeroImg {
+    allFile(filter: { name: { regex: "/banner/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+              ...GatsbyImageSharpFluid_noBase64
+              originalName
+            }
+          }
         }
       }
     }

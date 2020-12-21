@@ -11,6 +11,7 @@ module.exports = {
     localStorage: true,
   },
   rules: {
+    'import/extensions': 0,
     'import/no-absolute-path': 0,
     'global-require': 0,
     'no-useless-catch': 0,

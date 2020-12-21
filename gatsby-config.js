@@ -24,7 +24,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-layout',
-      options: { component: require.resolve('./src/components/templates/MainTemplate/MainTemplate.tsx') },
+      options: { component: require.resolve('./src/templates/MainTemplate/MainTemplate.tsx') },
     },
     {
       resolve: 'gatsby-plugin-eslint',
@@ -46,7 +46,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
@@ -80,6 +80,7 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
+        templates: path.join(__dirname, 'src/templates'),
         theme: path.join(__dirname, 'src/theme'),
         assets: path.join(__dirname, 'src/assets'),
         vendors: path.join(__dirname, 'src/vendors'),
@@ -95,11 +96,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // {
-    //   resolve: `gatsby-plugin-graphql-codegen`,
-    //   options: {
-    //     fileName: `./graphql-types.ts`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./graphql-types.ts`,
+      },
+    },
   ],
 };

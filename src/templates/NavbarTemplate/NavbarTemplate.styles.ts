@@ -27,7 +27,7 @@ export const Logo = styled.div`
     font-weight: 800;
 
     .dot {
-      color: red;
+      color: ${theme.colors.red};
       font-size: 70px;
       line-height: 36px;
     }

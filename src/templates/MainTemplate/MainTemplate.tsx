@@ -21,10 +21,10 @@ const MainTemplate: React.FC = ({ children }) => {
       <Helmet lang="pl" title="LCAR Auto Detailing" link={linkData} />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <S.Container>
+        <S.Wrapper>
           <NavbarTemplate />
           {children}
-        </S.Container>
+        </S.Wrapper>
       </ThemeProvider>
     </>
   );
