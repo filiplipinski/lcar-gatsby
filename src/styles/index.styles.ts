@@ -4,6 +4,16 @@ import GatsbyImg from 'gatsby-image';
 
 export const ImageWrapper = styled.div`
   position: relative;
+  height: 60vh;
+`;
+
+export const MainImg = styled(GatsbyImg)`
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: 'cover';
 `;
 
 export const Img = styled(GatsbyImg)`
@@ -13,6 +23,7 @@ export const Img = styled(GatsbyImg)`
   right: 0;
   bottom: 0;
   z-index: 1;
+  object-fit: 'cover';
 `;
 
 export const TextBox = styled.div`
@@ -24,12 +35,37 @@ export const TextBox = styled.div`
   left: 10%;
 
   color: ${theme.colors.common.white};
-  font-size: 30px;
+  font-size: 20px;
 
+  ${theme.mq.tablet} {
+    font-size: 30px;
+  }
+
+  /* cyferka */
+  div {
+    margin-bottom: 10px;
+
+    ${theme.mq.tablet} {
+      margin-bottom: 20px;
+    }
+    ${theme.mq.desktop} {
+      margin-bottom: 30px;
+    }
+  }
+
+  /* duzy tekst */
   div > span {
-    font-size: 50px;
-    line-height: 70px;
+    font-size: 35px;
+    line-height: 30px;
     font-weight: ${theme.font.weight.extraBold};
+
+    ${theme.mq.tablet} {
+      font-size: 50px;
+    }
+
+    ${theme.mq.desktop} {
+      font-size: 60px;
+    }
   }
 `;
 

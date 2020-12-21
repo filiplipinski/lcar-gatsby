@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 import { Container } from 'components/container/Container';
 import * as S from 'styles/index.styles';
@@ -38,7 +37,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             </div>
           </S.TextBox>
 
-          <Img fluid={bannerFluid} />
+          <S.MainImg fluid={bannerFluid} />
 
           <S.Img fluid={bannerShadowFluid} />
         </S.ImageWrapper>
