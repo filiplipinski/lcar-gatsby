@@ -5,6 +5,7 @@ import GatsbyImg from 'gatsby-image';
 export const ImageWrapper = styled.div`
   position: relative;
   height: 50vh;
+  background-color: ${theme.colors.secondary.main};
 
   ${theme.mq.tablet} {
     height: 60vh;
@@ -64,11 +65,7 @@ export const TextBox = styled.div`
     font-weight: ${theme.font.weight.extraBold};
 
     ${theme.mq.tablet} {
-      font-size: 50px;
-    }
-
-    ${theme.mq.desktop} {
-      font-size: 55px;
+      font-size: 45px;
     }
   }
 `;

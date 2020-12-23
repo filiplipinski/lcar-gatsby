@@ -23,25 +23,23 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      {bannerFluid && bannerShadowFluid && (
-        <S.ImageWrapper>
-          <S.TextBox>
-            <div>
-              1<S.Dot>.</S.Dot> <span>Profesjonalizm</span>
-            </div>
-            <div>
-              2<S.Dot>.</S.Dot> <span>Staranność</span>
-            </div>
-            <div>
-              3<S.Dot>.</S.Dot> <span>Dokładność</span>
-            </div>
-          </S.TextBox>
+      <S.ImageWrapper>
+        <S.TextBox>
+          <div>
+            1<S.Dot>.</S.Dot> <span>Profesjonalizm</span>
+          </div>
+          <div>
+            2<S.Dot>.</S.Dot> <span>Staranność</span>
+          </div>
+          <div>
+            3<S.Dot>.</S.Dot> <span>Dokładność</span>
+          </div>
+        </S.TextBox>
 
-          <S.MainImg fluid={bannerFluid} />
+        <S.MainImg fluid={bannerFluid} />
 
-          <S.Img fluid={bannerShadowFluid} />
-        </S.ImageWrapper>
-      )}
+        <S.Img fluid={bannerShadowFluid} />
+      </S.ImageWrapper>
 
       <Container>{/* content here */}</Container>
     </>
