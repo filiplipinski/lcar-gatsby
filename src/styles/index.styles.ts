@@ -4,7 +4,11 @@ import GatsbyImg from 'gatsby-image';
 
 export const ImageWrapper = styled.div`
   position: relative;
-  height: 60vh;
+  height: 50vh;
+
+  ${theme.mq.tablet} {
+    height: 60vh;
+  }
 `;
 
 export const MainImg = styled(GatsbyImg)`
@@ -13,7 +17,7 @@ export const MainImg = styled(GatsbyImg)`
   left: 0;
   right: 0;
   bottom: 0;
-  object-fit: 'cover';
+  object-fit: cover;
 `;
 
 export const Img = styled(GatsbyImg)`
@@ -23,7 +27,7 @@ export const Img = styled(GatsbyImg)`
   right: 0;
   bottom: 0;
   z-index: 1;
-  object-fit: 'cover';
+  object-fit: cover;
 `;
 
 export const TextBox = styled.div`
@@ -64,7 +68,7 @@ export const TextBox = styled.div`
     }
 
     ${theme.mq.desktop} {
-      font-size: 60px;
+      font-size: 55px;
     }
   }
 `;

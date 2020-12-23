@@ -1,23 +1,53 @@
 import React from 'react';
 
 import { Logo } from 'components/logo/Logo';
+import { Container } from 'components/container/Container.styles';
 
 import * as S from './Footer.styles';
 
 export const Footer: React.FC = () => {
   return (
     <S.Wrapper>
-      <S.FlexContainer>
-        <div>
-          <p>Kontakt</p>
+      <Container>
+        <S.InnerWrapper>
+          <S.FlexContainer>
+            <div>
+              <S.Title>Kontakt</S.Title>
 
-          <p>+48 539 943 336</p>
-          <p>Pon. - Pt. 8-18</p>
-        </div>
+              <p style={{ textAlign: 'center' }}>
+                <S.Red>+48</S.Red> 539 943 336 <br />
+                Pon.-Pt. 8-18
+              </p>
+            </div>
 
-        <Logo color="light" />
-      </S.FlexContainer>
-      {/* <p>Lcar.pl 2020 Wszelkie prawa zastrzezone</p> */}
+            <div>
+              <S.Title>Email</S.Title>
+              <p>
+                <S.Red>karol.lipinski</S.Red>@lcar.pl
+              </p>
+            </div>
+
+            <div>
+              <S.Title>Adres</S.Title>
+              <strong>Karol Lipiński</strong>
+              <p>
+                ul. <S.Red>Złota 48</S.Red> <br /> 26-604 Radom
+              </p>
+            </div>
+            <Logo color="light" />
+          </S.FlexContainer>
+
+          <S.Rights>
+            <S.Bold>
+              <S.Red>LCAR.PL</S.Red> ® 2020
+            </S.Bold>{' '}
+            Wszelkie prawa zastrzeżone
+            <div>
+              <i style={{ fontSize: '12px' }}>Strona w budowie</i>
+            </div>
+          </S.Rights>
+        </S.InnerWrapper>
+      </Container>
     </S.Wrapper>
   );
 };

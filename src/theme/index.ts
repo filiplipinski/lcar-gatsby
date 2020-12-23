@@ -71,11 +71,20 @@ const mq = Object.keys(breakpoints).reduce((acc, breakpoint) => {
   return acc;
 }, {} as Breakpoints);
 
+const spacing = {
+  '1': '8px',
+  '2': '16px',
+  '3': '24px',
+  '4': '32px',
+  '5': '40px',
+};
+
 export const theme = {
   colors,
   mq,
   breakpoints,
   font,
+  spacing,
   layout: {
     mobileNavbarHeight: '100px',
     navbarHeight: '150px',
