@@ -25,7 +25,7 @@ const colors = {
     dark: 'blue',
   },
   secondary: {
-    main: 'yellow',
+    main: '#0F0F0F',
     light: 'yellow',
     dark: 'yellow',
   },

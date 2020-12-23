@@ -49,7 +49,7 @@ export const TextBox = styled.div`
       margin-bottom: 20px;
     }
     ${theme.mq.desktop} {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
   }
 
