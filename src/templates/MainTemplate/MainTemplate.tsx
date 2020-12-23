@@ -4,8 +4,8 @@ import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme';
-import { Navbar } from 'components/Navbar/Navbar';
-import { Footer } from 'components/Footer/Footer';
+import { Navbar } from 'components/navbar/Navbar';
+import { Footer } from 'components/footer/Footer';
 
 import * as S from './MainTemplate.styles';
 
@@ -24,7 +24,7 @@ const MainTemplate: React.FC = ({ children }) => {
       <ThemeProvider theme={theme}>
         <S.Wrapper>
           <Navbar />
-          {children}
+          <div>{children}</div>
           <Footer />
         </S.Wrapper>
       </ThemeProvider>

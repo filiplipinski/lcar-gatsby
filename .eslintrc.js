@@ -20,7 +20,6 @@ module.exports = {
     'react/prop-types': 0,
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
-    'import/no-unresolved': 1,
     'react/jsx-props-no-spreading': 0,
     'react/destructuring-assignment': 0,
     'react/button-has-type': 0,
