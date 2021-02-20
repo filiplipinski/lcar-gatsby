@@ -66,10 +66,20 @@ const font = {
   },
 };
 
+const initialMq: Breakpoints = {
+  huge: '',
+  bigDesktop: '',
+  desktop: '',
+  bigTablet: '',
+  tablet: '',
+  bigPhone: '',
+  phone: '',
+};
+
 const mq = Object.keys(breakpoints).reduce((acc, breakpoint) => {
   acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;
   return acc;
-}, {} as Breakpoints);
+}, initialMq);
 
 const spacing = {
   '1': '8px',

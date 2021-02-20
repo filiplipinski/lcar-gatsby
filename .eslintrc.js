@@ -11,6 +11,8 @@ module.exports = {
     localStorage: true,
   },
   rules: {
+    'arrow-body-style': 0,
+    'no-unused-vars': 1, // 1=warn
     'import/extensions': 0,
     'import/no-absolute-path': 0,
     'global-require': 0,

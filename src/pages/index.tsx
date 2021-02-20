@@ -4,10 +4,8 @@ import { graphql } from 'gatsby';
 import { Container } from 'components/container/Container';
 import * as S from 'styles/index.styles';
 
-import { HeroImgQuery } from '../../graphql-types';
-
 interface Props {
-  data: HeroImgQuery;
+  data: any;
 }
 
 const IndexPage: React.FC<Props> = ({ data }) => {
