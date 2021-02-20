@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import { theme } from 'theme';
+import { makeStyles } from '@material-ui/core';
 
-export const Container = styled.div`
-  max-width: ${theme.breakpoints.desktop}px;
-  margin: 0 auto;
-`;
+export const useStyles = makeStyles((theme) => ({
+  container: {
+    maxWidth: theme.breakpoints.values.lg,
+    margin: '0 auto',
+  },
+}));

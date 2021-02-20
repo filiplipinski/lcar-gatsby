@@ -6,8 +6,12 @@ import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme';
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
+import { ThemeProvider as MuiThemeProvider } from 'providers/themeProvider/ThemeProvider';
+import { Container } from 'components/container/Container';
 
 import * as S from './MainTemplate.styles';
+
+// import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 
 const linkData = [
   {
@@ -21,13 +25,22 @@ const MainTemplate: React.FC = ({ children }) => {
     <>
       <Helmet lang="pl" title="LCAR Auto Detailing" link={linkData} />
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+
+      <MuiThemeProvider>
+        <Container>
+          <Navbar />
+          <div>{children}</div>
+          <Footer />
+        </Container>
+      </MuiThemeProvider>
+
+      {/* <ThemeProvider theme={theme}>
         <S.Wrapper>
           <Navbar />
           <div>{children}</div>
           <Footer />
         </S.Wrapper>
-      </ThemeProvider>
+      </ThemeProvider> */}
     </>
   );
 };

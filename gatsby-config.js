@@ -81,6 +81,7 @@ module.exports = {
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
         templates: path.join(__dirname, 'src/templates'),
+        providers: path.join(__dirname, 'src/providers'),
         theme: path.join(__dirname, 'src/theme'),
         assets: path.join(__dirname, 'src/assets'),
         vendors: path.join(__dirname, 'src/vendors'),
@@ -95,12 +96,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-offline`,
-    // {
-    //   resolve: `gatsby-plugin-graphql-codegen`,
-    //   options: {
-    //     fileName: `./graphql-types.ts`,
-    //   },
-    // },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-material-ui',
   ],
 };

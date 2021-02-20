@@ -6,6 +6,7 @@ export const ImageWrapper = styled.div`
   position: relative;
   height: 50vh;
   background-color: ${theme.colors.secondary.main};
+  pointer-events: none;
 
   ${theme.mq.tablet} {
     height: 60vh;

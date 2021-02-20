@@ -1,17 +1,26 @@
 import React from 'react';
-import * as S from './Logo.styles';
+import { Typography, Box } from '@material-ui/core';
 
-type Props = {
-  color: 'light' | 'dark';
-};
+import { LogoProps } from './Logo.types';
+import { useStyles } from './Logo.styles';
 
-export const Logo: React.FC<Props> = (props) => {
+// TODO: usless prop probably, will be img logo
+export const Logo: React.FC<LogoProps> = ({ color }) => {
+  const styles = useStyles();
+
   return (
-    <S.Logo color={props.color}>
-      <span>
-        LCAR<span className="dot">.</span>
-      </span>{' '}
-      <span>Auto Detailing</span>
-    </S.Logo>
+    <Box display="flex" alignItems="center">
+      <Typography variant="h2" className={styles.lcar}>
+        LCAR
+      </Typography>
+
+      <Typography variant="h1" color="secondary">
+        .
+      </Typography>
+
+      <Typography variant="h5" style={{ textTransform: 'uppercase' }}>
+        Auto Detailing
+      </Typography>
+    </Box>
   );
 };

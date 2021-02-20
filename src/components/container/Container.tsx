@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './Container.styles';
+import { useStyles } from './Container.styles';
 
 export const Container: React.FC = ({ children }) => {
-  return <S.Container>{children}</S.Container>;
+  const styles = useStyles();
+
+  return <div className={styles.container}>{children}</div>;
 };
