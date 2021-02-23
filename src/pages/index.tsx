@@ -1,14 +1,17 @@
 import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
+import { Typography, Box } from '@material-ui/core';
+import Img from 'gatsby-image';
 
-import { Container } from 'components/container/Container';
-import * as S from 'styles/index.styles';
+import { useStyles } from 'styles/index.styles';
 
-interface Props {
-  data: any;
-}
+type Props = {
+  data: GatsbyTypes.HeroImgQuery;
+};
 
 const IndexPage: React.FC<Props> = ({ data }) => {
+  const styles = useStyles();
+
   const bannerFluid = useMemo(() => {
     const foundImg = data.allFile.edges.find((edge) => edge.node.childImageSharp?.fluid?.originalName === 'banner.jpg');
     return foundImg?.node.childImageSharp?.fluid;
@@ -20,27 +23,37 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   }, []);
 
   return (
-    <>
-      <S.ImageWrapper>
-        <S.TextBox>
-          <div>
-            1<S.Dot>.</S.Dot> <span>Profesjonalizm</span>
-          </div>
-          <div>
-            2<S.Dot>.</S.Dot> <span>Staranność</span>
-          </div>
-          <div>
-            3<S.Dot>.</S.Dot> <span>Dokładność</span>
-          </div>
-        </S.TextBox>
+    <div className={styles.container}>
+      <div className={styles.textBox}>
+        <Box display="flex" mb={1}>
+          <Typography variant="h3">1</Typography>
+          <Typography variant="h3" color="secondary">
+            .
+          </Typography>
 
-        <S.MainImg fluid={bannerFluid} />
+          <Typography variant="h3">Profesjonalizm</Typography>
+        </Box>
+        <Box display="flex" mb={1}>
+          <Typography variant="h3">2</Typography>
+          <Typography variant="h3" color="secondary">
+            .
+          </Typography>
 
-        <S.Img fluid={bannerShadowFluid} />
-      </S.ImageWrapper>
+          <Typography variant="h3">Staranność</Typography>
+        </Box>
+        <Box display="flex" mb={1}>
+          <Typography variant="h3">3</Typography>
+          <Typography variant="h3" color="secondary">
+            .
+          </Typography>
 
-      <Container>{/* content here */}</Container>
-    </>
+          <Typography variant="h3">Dokładność</Typography>
+        </Box>
+      </div>
+
+      {bannerFluid && <Img fluid={bannerFluid} className={styles.mainImg} />}
+      {bannerShadowFluid && <Img fluid={bannerShadowFluid} className={styles.imgShadow} />}
+    </div>
   );
 };
 

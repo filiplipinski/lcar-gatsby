@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Logo } from 'components/logo/Logo';
-
 import * as S from './Footer.styles';
 
 export const Footer: React.FC = () => {
@@ -32,7 +30,8 @@ export const Footer: React.FC = () => {
               ul. <S.Red>Złota 48</S.Red> <br /> 26-604 Radom
             </p>
           </div>
-          <Logo color="light" />
+
+          {/* logo here */}
         </S.FlexContainer>
 
         <S.Rights>

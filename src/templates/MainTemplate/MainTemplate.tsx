@@ -1,13 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from 'theme/GlobalStyle';
-import { theme } from 'theme';
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
 import { ThemeProvider as MuiThemeProvider } from 'providers/themeProvider/ThemeProvider';
-import { Container } from 'components/container/Container';
 
 const linkData = [
   {
