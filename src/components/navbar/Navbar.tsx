@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { AppBar, Toolbar } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import Img from 'gatsby-image';
 
-// import { Logo } from 'components/logo/Logo';
+import { Container } from 'components/container/Container';
 
 import { useStyles } from './Navbar.styles';
 
@@ -11,7 +11,7 @@ export const query = graphql`
   query LogoImg {
     file(name: { eq: "logo" }) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(maxWidth: 130, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -25,18 +25,10 @@ export const Navbar = () => {
 
   const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, []);
 
-  console.log(logoFluid);
   return (
-    // <S.Wrapper>
-    //   <Logo color="dark" />
-    // </S.Wrapper>
-
     <AppBar position="static" className={styles.appbar}>
       <Toolbar>
-        {/* <Logo color="dark" /> */}
-        {/* <LogoImage /> */}
-
-        {logoFluid && <GatsbyImage fluid={logoFluid} />}
+        <Container>{logoFluid && <Img fluid={logoFluid} alt="" className={styles.logo} />}</Container>
       </Toolbar>
     </AppBar>
   );

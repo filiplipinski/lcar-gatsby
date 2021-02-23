@@ -4,5 +4,6 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     maxWidth: theme.breakpoints.values.lg,
     margin: '0 auto',
+    width: '100%',
   },
 }));

@@ -9,10 +9,6 @@ import { Footer } from 'components/footer/Footer';
 import { ThemeProvider as MuiThemeProvider } from 'providers/themeProvider/ThemeProvider';
 import { Container } from 'components/container/Container';
 
-import * as S from './MainTemplate.styles';
-
-// import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
-
 const linkData = [
   {
     rel: 'stylesheet',
@@ -27,20 +23,10 @@ const MainTemplate: React.FC = ({ children }) => {
       <GlobalStyle />
 
       <MuiThemeProvider>
-        <Container>
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-        </Container>
+        <Navbar />
+        <div>{children}</div>
+        <Footer />
       </MuiThemeProvider>
-
-      {/* <ThemeProvider theme={theme}>
-        <S.Wrapper>
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-        </S.Wrapper>
-      </ThemeProvider> */}
     </>
   );
 };
