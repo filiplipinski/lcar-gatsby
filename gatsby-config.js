@@ -96,6 +96,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {
+        emitSchema: {
+          'src/__generated__/gatsby-introspection.json': true,
+        },
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-material-ui',
   ],

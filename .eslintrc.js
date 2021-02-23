@@ -1,6 +1,9 @@
+const path = require('path');
+
 module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['babel', 'react-hooks'],
+  plugins: ['babel', 'react-hooks', 'graphql'],
+  // graph plugin is for: eslint-plugin-graphql
   parser: 'babel-eslint',
   env: {
     jest: true,
@@ -9,6 +12,7 @@ module.exports = {
     window: true,
     document: true,
     localStorage: true,
+    GatsbyTypes: true,
   },
   rules: {
     'arrow-body-style': 0,
@@ -40,6 +44,15 @@ module.exports = {
       },
     ],
     'react/jsx-tag-spacing': 1,
+    // below for graphql typegen
+    'graphql/template-strings': [
+      'error',
+      {
+        env: 'relay',
+        tagName: 'graphql',
+        schemaJsonFilepath: path.resolve(__dirname, 'src/__generated__/gatsby-introspection.json'),
+      },
+    ],
   },
   settings: {
     'import/resolver': {

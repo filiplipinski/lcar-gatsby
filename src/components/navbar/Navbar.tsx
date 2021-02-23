@@ -8,7 +8,7 @@ import GatsbyImage from 'gatsby-image';
 import { useStyles } from './Navbar.styles';
 
 export const query = graphql`
-  {
+  query LogoImg {
     file(name: { eq: "logo" }) {
       childImageSharp {
         fluid(quality: 100) {
@@ -21,9 +21,9 @@ export const query = graphql`
 
 export const Navbar = () => {
   const styles = useStyles();
-  const logoImgData = useStaticQuery(query);
+  const logoImgData = useStaticQuery<GatsbyTypes.LogoImgQuery>(query);
 
-  const logoFluid = useMemo(() => logoImgData.file?.childImageSharp.fluid, []);
+  const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, []);
 
   console.log(logoFluid);
   return (
@@ -36,7 +36,7 @@ export const Navbar = () => {
         {/* <Logo color="dark" /> */}
         {/* <LogoImage /> */}
 
-        {/* {logoFluid && <GatsbyImage fluid={logoFluid} />} */}
+        {logoFluid && <GatsbyImage fluid={logoFluid} />}
       </Toolbar>
     </AppBar>
   );
