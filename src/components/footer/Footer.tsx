@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
         <div className={styles.innerWrapper}>
           <div className={styles.flexContainer}>
             <div>
-              <Typography variant="h6">Kontakt</Typography>
+              <Typography variant="h3">Kontakt</Typography>
               <Typography>
                 <Typography component="span" color="secondary">
                   +48
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div>
-              <Typography variant="h6">Email</Typography>
+              <Typography variant="h3">Email</Typography>
 
               <Typography>
                 <Typography component="span" color="secondary">
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div>
-              <Typography variant="h6">Adres</Typography>
+              <Typography variant="h3">Adres</Typography>
 
               <Typography component="strong">Karol Lipiński</Typography>
 

@@ -10,6 +10,11 @@ export const useStyles = makeStyles((theme) => ({
   },
   logo: {
     width: 130,
-    margin: 'auto 0 auto 70px',
+    margin: 'auto',
+
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: 70,
+      marginRight: 0,
+    },
   },
 }));

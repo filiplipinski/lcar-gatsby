@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core';
 export const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: -1,
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.background.default,
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
   },
   innerWrapper: {
     padding: '32px 16px',

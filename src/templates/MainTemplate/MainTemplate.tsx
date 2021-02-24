@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
-import { ThemeProvider as MuiThemeProvider } from 'providers/themeProvider/ThemeProvider';
+import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 
 const linkData = [
   {
@@ -17,11 +17,11 @@ const MainTemplate: React.FC = ({ children }) => {
     <>
       <Helmet lang="pl" title="LCAR Auto Detailing" link={linkData} />
 
-      <MuiThemeProvider>
+      <ThemeProvider>
         <Navbar />
         <div>{children}</div>
         <Footer />
-      </MuiThemeProvider>
+      </ThemeProvider>
     </>
   );
 };
