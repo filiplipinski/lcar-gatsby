@@ -39,10 +39,6 @@ module.exports = {
       options: { files: ['**/*.{js,jsx}'], failOnError: false },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: { displayName: true },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

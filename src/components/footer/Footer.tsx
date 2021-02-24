@@ -1,49 +1,66 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 
-import * as S from './Footer.styles';
+import { Container } from 'components/container/Container';
+
+import { useStyles } from './Footer.styles';
 
 export const Footer: React.FC = () => {
+  const styles = useStyles();
+
   return (
-    <S.Wrapper>
-      <S.InnerWrapper>
-        <S.FlexContainer>
-          <div>
-            <S.Title>Kontakt</S.Title>
+    <div className={styles.container}>
+      <Container>
+        <div className={styles.innerWrapper}>
+          <div className={styles.flexContainer}>
+            <div>
+              <Typography variant="h6">Kontakt</Typography>
+              <Typography>
+                <Typography component="span" color="secondary">
+                  +48
+                </Typography>{' '}
+                539 943 336 <br />
+                Pon.-Pt. 8-18
+              </Typography>
+            </div>
 
-            <p style={{ textAlign: 'center' }}>
-              <S.Red>+48</S.Red> 539 943 336 <br />
-              Pon.-Pt. 8-18
-            </p>
+            <div>
+              <Typography variant="h6">Email</Typography>
+
+              <Typography>
+                <Typography component="span" color="secondary">
+                  karol.lipinski
+                </Typography>
+                @lcar.pl
+              </Typography>
+            </div>
+
+            <div>
+              <Typography variant="h6">Adres</Typography>
+
+              <Typography component="strong">Karol Lipiński</Typography>
+
+              <Typography>
+                ul.{' '}
+                <Typography component="span" color="secondary">
+                  Złota 48
+                </Typography>{' '}
+                <br /> 26-604 Radom
+              </Typography>
+            </div>
           </div>
 
-          <div>
-            <S.Title>Email</S.Title>
-            <p>
-              <S.Red>karol.lipinski</S.Red>@lcar.pl
-            </p>
+          <div className={styles.rights}>
+            <Typography component="strong">
+              <Typography component="span" color="secondary">
+                LCAR.PL
+              </Typography>{' '}
+              ® 2020
+              <i style={{ fontSize: '12px', display: 'block' }}>Strona w budowie</i>
+            </Typography>
           </div>
-
-          <div>
-            <S.Title>Adres</S.Title>
-            <strong>Karol Lipiński</strong>
-            <p>
-              ul. <S.Red>Złota 48</S.Red> <br /> 26-604 Radom
-            </p>
-          </div>
-
-          {/* logo here */}
-        </S.FlexContainer>
-
-        <S.Rights>
-          <S.Bold>
-            <S.Red>LCAR.PL</S.Red> ® 2020
-          </S.Bold>{' '}
-          Wszelkie prawa zastrzeżone
-          <div>
-            <i style={{ fontSize: '12px' }}>Strona w budowie</i>
-          </div>
-        </S.Rights>
-      </S.InnerWrapper>
-    </S.Wrapper>
+        </div>
+      </Container>
+    </div>
   );
 };

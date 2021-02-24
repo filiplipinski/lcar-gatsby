@@ -2255,12 +2255,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.options.emitWarning'
   | 'pluginCreator.pluginOptions.options.failOnError'
   | 'pluginCreator.pluginOptions.files'
-  | 'pluginCreator.pluginOptions.displayName'
-  | 'pluginCreator.pluginOptions.fileName'
-  | 'pluginCreator.pluginOptions.minify'
-  | 'pluginCreator.pluginOptions.namespace'
-  | 'pluginCreator.pluginOptions.transpileTemplateLiterals'
-  | 'pluginCreator.pluginOptions.pure'
   | 'pluginCreator.pluginOptions.name'
   | 'pluginCreator.pluginOptions.path'
   | 'pluginCreator.pluginOptions.short_name'
@@ -2484,12 +2478,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.options.emitWarning'
   | 'pluginOptions.options.failOnError'
   | 'pluginOptions.files'
-  | 'pluginOptions.displayName'
-  | 'pluginOptions.fileName'
-  | 'pluginOptions.minify'
-  | 'pluginOptions.namespace'
-  | 'pluginOptions.transpileTemplateLiterals'
-  | 'pluginOptions.pure'
   | 'pluginOptions.name'
   | 'pluginOptions.path'
   | 'pluginOptions.short_name'
@@ -2639,12 +2627,6 @@ type SitePluginPluginOptions = {
   readonly component: Maybe<Scalars['String']>;
   readonly options: Maybe<SitePluginPluginOptionsOptions>;
   readonly files: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly displayName: Maybe<Scalars['Boolean']>;
-  readonly fileName: Maybe<Scalars['Boolean']>;
-  readonly minify: Maybe<Scalars['Boolean']>;
-  readonly namespace: Maybe<Scalars['String']>;
-  readonly transpileTemplateLiterals: Maybe<Scalars['Boolean']>;
-  readonly pure: Maybe<Scalars['Boolean']>;
   readonly name: Maybe<Scalars['String']>;
   readonly path: Maybe<Scalars['String']>;
   readonly short_name: Maybe<Scalars['String']>;
@@ -2693,12 +2675,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly component: Maybe<StringQueryOperatorInput>;
   readonly options: Maybe<SitePluginPluginOptionsOptionsFilterInput>;
   readonly files: Maybe<StringQueryOperatorInput>;
-  readonly displayName: Maybe<BooleanQueryOperatorInput>;
-  readonly fileName: Maybe<BooleanQueryOperatorInput>;
-  readonly minify: Maybe<BooleanQueryOperatorInput>;
-  readonly namespace: Maybe<StringQueryOperatorInput>;
-  readonly transpileTemplateLiterals: Maybe<BooleanQueryOperatorInput>;
-  readonly pure: Maybe<BooleanQueryOperatorInput>;
   readonly name: Maybe<StringQueryOperatorInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly short_name: Maybe<StringQueryOperatorInput>;

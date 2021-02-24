@@ -25,13 +25,17 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#000',
+      main: '#2d2e28', // OK
     },
     secondary: {
       main: '#FF0000', // TODO: podien na prawdziwy kolor
     },
     background: {
       default: '#fff',
+    },
+    common: {
+      white: '#fafafa', // OK
+      black: '#00000',
     },
   },
 });
@@ -55,6 +59,12 @@ theme.typography.h5 = {
 };
 theme.typography.h6 = {
   ...theme.typography.h6,
+};
+theme.typography.body1 = {
+  ...theme.typography.body1,
+  fontWeight: 400,
+  fontSize: 16,
+  lineHeight: '24px',
 };
 
 export default theme;

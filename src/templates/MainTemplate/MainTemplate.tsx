@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import GlobalStyle from 'theme/GlobalStyle';
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
 import { ThemeProvider as MuiThemeProvider } from 'providers/themeProvider/ThemeProvider';
@@ -17,7 +16,6 @@ const MainTemplate: React.FC = ({ children }) => {
   return (
     <>
       <Helmet lang="pl" title="LCAR Auto Detailing" link={linkData} />
-      <GlobalStyle />
 
       <MuiThemeProvider>
         <Navbar />
