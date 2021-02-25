@@ -14,16 +14,19 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
-    zIndex: 1,
-    top: '25%',
+    zIndex: 2,
     left: '10%',
+    top: 150,
 
-    color: theme.palette.background.default,
     fontSize: 20,
 
     [theme.breakpoints.up('sm')]: {
       fontSize: 30,
     },
+  },
+  textLine: {
+    marginBottom: 8,
+    color: theme.palette.common.white,
   },
   mainImg: {
     '&&': {
