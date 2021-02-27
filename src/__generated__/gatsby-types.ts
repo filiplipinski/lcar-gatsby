@@ -2786,11 +2786,6 @@ type CarsImgQueryVariables = Exact<{ [key: string]: never; }>;
 
 type CarsImgQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment> }> }> };
 
-type LogoImgQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type LogoImgQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment> }> }> };
-
 type HeroImgQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2798,6 +2793,11 @@ type HeroImgQuery = { readonly allFile: { readonly edges: ReadonlyArray<{ readon
             Pick<ImageSharpFluid, 'originalName'>
             & GatsbyImageSharpFluid_noBase64Fragment
           )> }> } }> } };
+
+type LogoImgQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImgQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

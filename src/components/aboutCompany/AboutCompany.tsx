@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -26,9 +26,11 @@ export const AboutCompany = () => {
 
   return (
     <Container className={styles.wrapper}>
-      <Typography variant="h2" align="center">
-        O firmie
-      </Typography>
+      <Box mt={4} mb={4}>
+        <Typography variant="h2" align="center">
+          O firmie
+        </Typography>
+      </Box>
 
       <div className={styles.flexContainer}>
         <Typography className={styles.text}>

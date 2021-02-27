@@ -11,22 +11,23 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   textBox: {
-    display: 'flex',
-    flexDirection: 'column',
     position: 'absolute',
     zIndex: 2,
     left: '10%',
-    top: 150,
-
-    fontSize: 20,
-
-    [theme.breakpoints.up('sm')]: {
-      fontSize: 30,
-    },
+    top: 100,
   },
   textLine: {
-    marginBottom: 8,
+    lineHeight: 1,
+    textTransform: 'capitalize',
     color: theme.palette.common.white,
+  },
+  number: {
+    fontSize: 24,
+    fontWeight: theme.typography.fontWeightRegular,
+  },
+  dot: {
+    color: theme.palette.secondary.main,
+    fontSize: 56,
   },
   mainImg: {
     '&&': {

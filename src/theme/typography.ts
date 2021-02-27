@@ -15,19 +15,16 @@ export const typography = (palette: Palette): TypographyOptions => ({
     fontWeight: fontWeightBold,
     color: palette.primary.main,
     textTransform: 'uppercase',
-    padding: '32px 0',
   },
   h2: {
     fontWeight: fontWeightBold,
     textTransform: 'uppercase',
     color: palette.primary.main,
-    padding: '32px 0',
   },
   h3: {
     fontWeight: fontWeightBold,
     textTransform: 'uppercase',
     color: palette.primary.main,
-    // padding: '24px 0',
   },
   body1: {
     fontWeight: 400,

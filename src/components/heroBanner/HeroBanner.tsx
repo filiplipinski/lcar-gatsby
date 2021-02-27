@@ -45,42 +45,18 @@ export const HeroBanner = () => {
     <div className={styles.container}>
       <Container>
         <div className={styles.textBox}>
-          <Box display="flex" className={styles.textLine}>
-            <Typography variant="h3" color="inherit">
-              1
-            </Typography>
-            <Typography variant="h3" color="secondary">
-              .
-            </Typography>
-
-            <Typography variant="h3" color="inherit">
-              Profesjonalizm
-            </Typography>
-          </Box>
-          <Box display="flex" className={styles.textLine}>
-            <Typography variant="h3" color="inherit">
-              2
-            </Typography>
-            <Typography variant="h3" color="secondary">
-              .
-            </Typography>
-
-            <Typography variant="h3" color="inherit">
-              Staranność
-            </Typography>
-          </Box>
-          <Box display="flex" className={styles.textLine}>
-            <Typography variant="h3" color="inherit">
-              3
-            </Typography>
-            <Typography variant="h3" color="secondary">
-              .
-            </Typography>
-
-            <Typography variant="h3" color="inherit">
-              Dokładność
-            </Typography>
-          </Box>
+          <Typography variant="h2" color="inherit" className={styles.textLine}>
+            <span className={styles.number}>1</span>
+            <span className={styles.dot}>.</span> Profesjonalizm
+          </Typography>
+          <Typography variant="h2" color="inherit" className={styles.textLine}>
+            <span className={styles.number}>2</span>
+            <span className={styles.dot}>.</span> Staranność
+          </Typography>
+          <Typography variant="h2" color="inherit" className={styles.textLine}>
+            <span className={styles.number}>3</span>
+            <span className={styles.dot}>.</span> Dokładność
+          </Typography>
         </div>
       </Container>
 
