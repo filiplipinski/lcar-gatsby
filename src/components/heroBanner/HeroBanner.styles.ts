@@ -19,7 +19,6 @@ export const useStyles = makeStyles((theme) => ({
   textLine: {
     lineHeight: 1,
     textTransform: 'capitalize',
-    color: theme.palette.common.white,
   },
   number: {
     fontSize: 24,

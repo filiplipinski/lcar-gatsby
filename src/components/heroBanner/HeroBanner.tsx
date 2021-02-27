@@ -45,15 +45,15 @@ export const HeroBanner = () => {
     <div className={styles.container}>
       <Container>
         <div className={styles.textBox}>
-          <Typography variant="h2" color="inherit" className={styles.textLine}>
+          <Typography variant="h2" color="secondary" className={styles.textLine}>
             <span className={styles.number}>1</span>
             <span className={styles.dot}>.</span> Profesjonalizm
           </Typography>
-          <Typography variant="h2" color="inherit" className={styles.textLine}>
+          <Typography variant="h2" color="secondary" className={styles.textLine}>
             <span className={styles.number}>2</span>
             <span className={styles.dot}>.</span> Staranność
           </Typography>
-          <Typography variant="h2" color="inherit" className={styles.textLine}>
+          <Typography variant="h2" color="secondary" className={styles.textLine}>
             <span className={styles.number}>3</span>
             <span className={styles.dot}>.</span> Dokładność
           </Typography>

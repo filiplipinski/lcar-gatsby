@@ -17,7 +17,46 @@ const theme = createMuiTheme({
           '-webkit-font-smoothing': 'antialiased',
           '-moz-osx-font-smoothing': 'grayscale',
           fontSize: '1.6rem',
+          backgroundColor: palette.background.default,
         },
+      },
+    },
+    MuiTypography: {
+      colorPrimary: {
+        color: palette.primary.main,
+      },
+      colorSecondary: {
+        color: palette.common.white,
+      },
+    },
+    MuiMenu: {
+      list: {
+        padding: 0,
+      },
+    },
+    MuiButton: {
+      root: {},
+      contained: {
+        borderRadius: 0,
+      },
+      containedPrimary: {
+        backgroundColor: palette.secondary.main,
+        color: '#fff',
+
+        '&&:hover': {
+          backgroundColor: palette.secondary.dark,
+        },
+      },
+      containedSecondary: {
+        backgroundColor: palette.grey[100],
+        color: palette.grey[500],
+
+        '&:hover': {
+          backgroundColor: palette.grey[200],
+        },
+      },
+      containedSizeLarge: {
+        fontSize: 16,
       },
     },
   },

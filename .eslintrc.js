@@ -25,6 +25,7 @@ module.exports = {
         proseWrap: 'always',
       },
     ],
+    'no-undef': 0,
     'arrow-body-style': 0,
     'no-unused-vars': 1, // 1=warn
     'import/extensions': 0,
@@ -45,7 +46,7 @@ module.exports = {
     'react/jsx-max-props-per-line': [
       1,
       {
-        maximum: 3,
+        maximum: 5,
       },
     ],
     'react/jsx-filename-extension': [
