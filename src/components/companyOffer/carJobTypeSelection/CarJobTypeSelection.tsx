@@ -15,17 +15,14 @@ export const CarJobTypeSelection = () => {
   const styles = useStyles();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-  const [selectedCarJobType, setSelectedCarJobType] = React.useState<CarJobTypeEnum>(CarJobTypeEnum.Detailing);
+  const [selectedCarJobType, setCarJobType] = useState<CarJobTypeEnum>(CarJobTypeEnum.Detailing);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenuItemClick = useCallback((carJobType: CarJobTypeEnum) => {
-    setSelectedCarJobType(carJobType);
+    setCarJobType(carJobType);
     setAnchorEl(null);
   }, []);
-
   const handleClose = () => useCallback(() => setAnchorEl(null), []);
-
-  const isBtnSelected = useCallback((carJobType: CarJobTypeEnum) => carJobType === selectedCarJobType, []);
 
   if (!isDesktop) {
     return (
@@ -43,19 +40,19 @@ export const CarJobTypeSelection = () => {
         </Button>
         <Menu anchorEl={anchorEl} keepMounted open={!!anchorEl} onClose={handleClose}>
           <MenuItem
-            selected={selectedCarJobType === CarJobTypeEnum.Detailing}
+            selected={CarJobTypeEnum.Detailing === selectedCarJobType}
             onClick={() => handleMenuItemClick(CarJobTypeEnum.Detailing)}
           >
             {carJobTypeLabelMap[CarJobTypeEnum.Detailing]}
           </MenuItem>
           <MenuItem
-            selected={selectedCarJobType === CarJobTypeEnum.Rent}
+            selected={CarJobTypeEnum.Rent === selectedCarJobType}
             onClick={() => handleMenuItemClick(CarJobTypeEnum.Rent)}
           >
             {carJobTypeLabelMap[CarJobTypeEnum.Rent]}
           </MenuItem>
           <MenuItem
-            selected={selectedCarJobType === CarJobTypeEnum.Modernization}
+            selected={CarJobTypeEnum.Modernization === selectedCarJobType}
             onClick={() => handleMenuItemClick(CarJobTypeEnum.Modernization)}
           >
             {carJobTypeLabelMap[CarJobTypeEnum.Modernization]}
@@ -67,15 +64,30 @@ export const CarJobTypeSelection = () => {
 
   return (
     <Box display="flex" justifyContent="center">
-      <Button color="secondary" variant="contained" size="large">
+      <Button
+        color={CarJobTypeEnum.Detailing === selectedCarJobType ? 'primary' : 'secondary'}
+        onClick={() => handleMenuItemClick(CarJobTypeEnum.Detailing)}
+        variant="contained"
+        size="large"
+      >
         {carJobTypeLabelMap[CarJobTypeEnum.Detailing]}
       </Button>
       <Box mr={2} />
-      <Button color="secondary" variant="contained" size="large">
+      <Button
+        color={CarJobTypeEnum.Rent === selectedCarJobType ? 'primary' : 'secondary'}
+        onClick={() => handleMenuItemClick(CarJobTypeEnum.Rent)}
+        variant="contained"
+        size="large"
+      >
         {carJobTypeLabelMap[CarJobTypeEnum.Rent]}
       </Button>
       <Box mr={2} />
-      <Button color="secondary" variant="contained" size="large">
+      <Button
+        color={CarJobTypeEnum.Modernization === selectedCarJobType ? 'primary' : 'secondary'}
+        onClick={() => handleMenuItemClick(CarJobTypeEnum.Modernization)}
+        variant="contained"
+        size="large"
+      >
         {carJobTypeLabelMap[CarJobTypeEnum.Modernization]}
       </Button>
     </Box>

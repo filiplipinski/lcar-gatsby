@@ -19,6 +19,8 @@ export const CompanyOffer = () => {
       </Box>
 
       <CarJobTypeSelection />
+
+      <div className={styles.cardsContainer}>karty</div>
     </Container>
   );
 };

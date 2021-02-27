@@ -37,7 +37,8 @@ export const CompanyPros = () => {
             Doświadczenie
           </Typography>
           <Typography align="center">
-            <strong>15 lat</strong> firmy na rynku i niezliczona ilość powierzonych nam zadań dla naszych klientów
+            <strong>15 lat</strong> firmy na rynku i niezliczona ilość powierzonych nam zadań dla
+            naszych klientów
           </Typography>
         </div>
         <div className={styles.sliderItem}>
@@ -45,7 +46,9 @@ export const CompanyPros = () => {
           <Typography variant="h3" align="center" className={styles.title}>
             Zadowoleni klienci
           </Typography>
-          <Typography align="center">Gwarancja zadowolenia - każdy Klient wychodzi od nas pełni satysfakcji</Typography>
+          <Typography align="center">
+            Gwarancja zadowolenia - każdy Klient wychodzi od nas pełni satysfakcji
+          </Typography>
         </div>
         <div className={styles.sliderItem}>
           <BestNo1Icon />

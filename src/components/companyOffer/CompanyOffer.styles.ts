@@ -8,4 +8,11 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.default,
     },
   },
+  cardsContainer: {
+    marginTop: 24,
+
+    [theme.breakpoints.up('md')]: {
+      marginTop: 48,
+    },
+  },
 }));
