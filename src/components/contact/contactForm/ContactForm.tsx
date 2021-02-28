@@ -29,14 +29,7 @@ export const ContactForm = () => {
           />
         </Grid>
         <Grid item>
-          <TextField
-            fullWidth
-            required
-            name="phone"
-            label="Telefon"
-            type="tel"
-            variant="outlined"
-          />
+          <TextField fullWidth name="phone" label="Telefon" type="tel" variant="outlined" />
         </Grid>
         <Grid item>
           <TextField
