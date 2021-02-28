@@ -25,7 +25,7 @@ export const AboutCompany = () => {
   const imgFluid = useMemo(() => imgData.file?.childImageSharp?.fluid, [imgData]);
 
   return (
-    <Container className={styles.wrapper}>
+    <Container id="about-company" className={styles.wrapper}>
       <Box mb={4}>
         <Typography variant="h2" align="center">
           O firmie

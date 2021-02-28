@@ -23,7 +23,7 @@ export const CompanyOffer = () => {
   const dataToDisplay = useMemo(() => companyOfferData[selectedCarJobType], [selectedCarJobType]);
 
   return (
-    <div className={styles.container}>
+    <div id="company-offer" className={styles.container}>
       <Container>
         <Box pt={4} pb={6}>
           <Typography variant="h2" align="center">

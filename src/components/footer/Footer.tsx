@@ -28,10 +28,9 @@ export const Footer: React.FC = () => {
 
   const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, [logoImgData]);
 
-  const handleClick = useCallback(
-    () => document.querySelector('header')?.scrollIntoView({ behavior: 'smooth' }),
-    [],
-  );
+  const handleClick = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   if (!isTablet) {
     return (
@@ -57,7 +56,9 @@ export const Footer: React.FC = () => {
 
           <ExpandLess onClick={handleClick} color="secondary" className={styles.expandLessIcon} />
 
-          {logoFluid && <Img fluid={logoFluid} alt="lcar logo" className={styles.logo} />}
+          <div role="presentation" onClick={handleClick} className={styles.logoContainer}>
+            {logoFluid && <Img fluid={logoFluid} alt="lcar logo" className={styles.logo} />}
+          </div>
         </Container>
       </div>
     );
@@ -108,7 +109,7 @@ export const Footer: React.FC = () => {
           </Box>
         </div>
 
-        <Box onClick={handleClick} alignSelf="center">
+        <Box onClick={handleClick} alignSelf="center" className={styles.logoContainer}>
           {logoFluid && <Img fluid={logoFluid} alt="lcar logo" className={styles.logo} />}
         </Box>
       </Container>

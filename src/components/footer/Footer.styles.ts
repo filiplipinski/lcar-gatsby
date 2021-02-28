@@ -39,14 +39,16 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: 24,
   },
-  logo: {
+  logoContainer: {
     marginTop: 64,
-    width: 200,
-    cursor: 'pointer',
 
     [theme.breakpoints.up('sm')]: {
       marginTop: 0,
     },
+  },
+  logo: {
+    width: 200,
+    cursor: 'pointer',
   },
   rights: {
     marginTop: 64,

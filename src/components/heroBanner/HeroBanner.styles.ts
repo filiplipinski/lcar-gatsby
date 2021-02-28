@@ -1,10 +1,12 @@
 import { makeStyles } from '@material-ui/core';
+import { navigationHeight } from 'components/navbar/Navbar.styles';
 
 export const useStyles = makeStyles((theme) => ({
   container: {
     position: 'relative',
     height: '50vh',
     pointerEvents: 'none',
+    marginTop: navigationHeight,
 
     [theme.breakpoints.up('sm')]: {
       height: '60vh',

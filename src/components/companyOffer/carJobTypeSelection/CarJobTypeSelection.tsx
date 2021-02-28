@@ -24,7 +24,7 @@ export const CarJobTypeSelection = ({ selectedCarJobType, onSelect }: CarJobType
     },
     [onSelect, setAnchorEl],
   );
-  const handleClose = () => useCallback(() => setAnchorEl(null), [setAnchorEl]);
+  const handleClose = useCallback(() => setAnchorEl(null), [setAnchorEl]);
 
   if (!isDesktop) {
     return (

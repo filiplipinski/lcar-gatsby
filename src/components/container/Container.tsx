@@ -2,18 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { useStyles } from './Container.styles';
+import { ContainerProps } from './Container.types';
 
-type Props = {
-  children: React.ReactNode;
-  className?: string;
-  disablePaddings?: boolean;
-};
-
-export const Container: React.FC<Props> = ({ children, className, disablePaddings = false }) => {
+export const Container = ({ children, className, id, disablePaddings = false }: ContainerProps) => {
   const styles = useStyles();
 
   return (
-    <div className={clsx(className, styles.container, !disablePaddings && styles.padding)}>
+    <div id={id} className={clsx(className, styles.container, !disablePaddings && styles.padding)}>
       {children}
     </div>
   );

@@ -41,8 +41,9 @@ export const HeroBanner = () => {
     return foundImg?.node.childImageSharp?.fluid;
   }, [heroImgData]);
 
+  // id start here, cause navbar is fixed
   return (
-    <div className={styles.container}>
+    <div id="start" className={styles.container}>
       <Container>
         <div className={styles.textBox}>
           <Typography variant="h2" color="secondary" className={styles.textLine}>
