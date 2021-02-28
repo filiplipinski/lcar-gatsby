@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Typography, Box } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import Img from 'gatsby-image';
 import { Container } from 'components/container/Container';
 

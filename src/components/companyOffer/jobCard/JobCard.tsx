@@ -1,11 +1,8 @@
 import React, { useMemo } from 'react';
-import Slider from 'react-slick';
 import {
   Typography,
   Card,
   CardActionArea,
-  CardMedia,
-  Box,
   CardContent,
   CardActions,
   Button,
@@ -80,7 +77,7 @@ export const JobCard = ({ title, description, isDesktop = false }: JobCardProps)
         </CardContent>
 
         <CardActions>
-          <Button disableTouchRipple color="primary">
+          <Button component="div" disableTouchRipple color="primary">
             Więcej
           </Button>
         </CardActions>
