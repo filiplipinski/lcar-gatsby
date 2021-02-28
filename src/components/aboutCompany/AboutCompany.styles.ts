@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.default,
     },
     paddingBottom: 32,
-    paddingTop: 32,
+    paddingTop: 56,
   },
   flexContainer: {
     [theme.breakpoints.up('sm')]: {

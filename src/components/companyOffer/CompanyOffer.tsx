@@ -34,8 +34,8 @@ export const CompanyOffer = () => {
         <CarJobTypeSelection selectedCarJobType={selectedCarJobType} onSelect={setCarJobType} />
       </Container>
 
-      <Container disablePaddings className={styles.cardsContainer}>
-        {!isDesktop && (
+      {!isDesktop && (
+        <Container disablePaddings className={styles.cardsContainer}>
           <Slider
             speed={500}
             dots
@@ -54,18 +54,18 @@ export const CompanyOffer = () => {
               </Box>
             ))}
           </Slider>
-        )}
+        </Container>
+      )}
 
-        {isDesktop && (
-          <div>
-            {dataToDisplay.map(({ title, description }) => (
-              <Box key={title} mt={2} mb={2}>
-                <JobCard isDesktop title={title} description={description} />
-              </Box>
-            ))}
-          </div>
-        )}
-      </Container>
+      {isDesktop && (
+        <Container className={styles.cardsContainer}>
+          {dataToDisplay.map(({ title, description }) => (
+            <Box key={title} mt={2} mb={2}>
+              <JobCard isDesktop title={title} description={description} />
+            </Box>
+          ))}
+        </Container>
+      )}
     </div>
   );
 };

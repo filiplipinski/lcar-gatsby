@@ -26,6 +26,7 @@ module.exports = {
         proseWrap: 'always',
       },
     ],
+
     'no-undef': 0,
     'arrow-body-style': 0,
     'no-unused-vars': 1, // 1=warn
@@ -44,6 +45,7 @@ module.exports = {
     'react/button-has-type': 0,
     'react/jsx-first-prop-new-line': [1, 'multiline'],
     'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
+    'react/no-array-index-key': 0,
     'react/jsx-max-props-per-line': [
       1,
       {
