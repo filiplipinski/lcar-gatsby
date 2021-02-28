@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((theme) => ({
   container: {
     paddingBottom: 56,
   },
@@ -13,12 +13,16 @@ export const useStyles = makeStyles(() => ({
     width: '100%',
   },
   imageItem: {
-    '&:nth-child(4)': {
-      gridRowEnd: 'span 2',
-      gridColumnEnd: 'span 2',
-    },
-    '&:nth-child(5)': {
-      gridColumnEnd: 'span 3',
+    [theme.breakpoints.up('sm')]: {
+      '&:nth-child(4)': {
+        // 2x2
+        gridRowEnd: 'span 2',
+        gridColumnEnd: 'span 2',
+      },
+      '&:nth-child(5)': {
+        // poziomy 2x1
+        gridColumnEnd: 'span 3',
+      },
     },
 
     '& img': {
