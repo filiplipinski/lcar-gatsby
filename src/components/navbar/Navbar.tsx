@@ -11,7 +11,7 @@ export const query = graphql`
   query LogoImg {
     file(name: { eq: "logo" }) {
       childImageSharp {
-        fluid(maxWidth: 130, quality: 100) {
+        fluid(maxWidth: 150, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -26,10 +26,10 @@ export const Navbar = () => {
   const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, [logoImgData]);
 
   return (
-    <AppBar position="static" className={styles.appbar}>
+    <AppBar id="header" position="static" className={styles.appbar}>
       <Toolbar>
         <Container>
-          {logoFluid && <Img fluid={logoFluid} alt="" className={styles.logo} />}
+          {logoFluid && <Img fluid={logoFluid} alt="lcar logo" className={styles.logo} />}
         </Container>
       </Toolbar>
     </AppBar>

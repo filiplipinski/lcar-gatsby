@@ -2727,6 +2727,11 @@ declare namespace GatsbyTypes {
     };
   };
 
+  type GatsbyImageSharpFluid_noBase64Fragment = Pick<
+    ImageSharpFluid,
+    'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+  >;
+
   type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type LogoImgQuery = {
@@ -2736,11 +2741,6 @@ declare namespace GatsbyTypes {
       }>;
     }>;
   };
-
-  type GatsbyImageSharpFluid_noBase64Fragment = Pick<
-    ImageSharpFluid,
-    'aspectRatio' | 'src' | 'srcSet' | 'sizes'
-  >;
 
   type RealizationsImgsQueryVariables = Exact<{ [key: string]: never }>;
 
@@ -2875,4 +2875,14 @@ declare namespace GatsbyTypes {
     ImageSharpSizes,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >;
+
+  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoWhiteImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
 }

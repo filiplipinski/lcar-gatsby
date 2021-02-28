@@ -19,6 +19,9 @@ const theme = createMuiTheme({
           fontSize: '1.6rem',
           backgroundColor: palette.background.default,
         },
+        a: {
+          textDecoration: 'none',
+        },
       },
     },
     MuiTypography: {

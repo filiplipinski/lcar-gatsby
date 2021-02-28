@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: 130,
+    width: 150,
     margin: 'auto',
 
     [theme.breakpoints.up('sm')]: {
