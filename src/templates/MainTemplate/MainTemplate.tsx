@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import smoothscroll from 'smoothscroll-polyfill';
 
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
@@ -8,8 +7,6 @@ import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-smoothscroll.polyfill();
 
 const linkData = [
   {
