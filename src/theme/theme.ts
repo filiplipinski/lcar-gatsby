@@ -65,6 +65,18 @@ const theme = createMuiTheme({
         fontSize: 16,
       },
     },
+    // textfield below
+    MuiInputBase: {
+      root: {
+        border: `1px solid ${palette.background.default}`,
+        backgroundColor: palette.common.white,
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        borderRadius: 0,
+      },
+    },
   },
 });
 

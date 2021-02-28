@@ -36,7 +36,12 @@ export const typography = (palette: Palette): TypographyOptions => ({
     lineHeight: '24px',
     color: palette.primary.main,
   },
+  body2: {
+    fontSize: 14,
+    color: palette.primary.main,
+  },
   caption: {
     fontSize: 12,
+    color: palette.primary.main,
   },
 });

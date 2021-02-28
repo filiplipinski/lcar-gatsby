@@ -5,6 +5,7 @@ import { AboutCompany } from 'components/aboutCompany/AboutCompany';
 import { CompanyPros } from 'components/companyPros/CompanyPros';
 import { CompanyOffer } from 'components/companyOffer/CompanyOffer';
 import { Realizations } from 'components/realizations/Realizations';
+import { Contact } from 'components/contact/Contact';
 
 const IndexPage = () => {
   return (
@@ -14,6 +15,7 @@ const IndexPage = () => {
       <CompanyPros />
       <CompanyOffer />
       <Realizations />
+      <Contact />
     </div>
   );
 };

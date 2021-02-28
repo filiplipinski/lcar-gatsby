@@ -68,6 +68,7 @@ export const Navbar = () => {
               <MenuItem onClick={() => handleClick('about-company')}>O firmie</MenuItem>
               <MenuItem onClick={() => handleClick('company-offer')}>Usługi</MenuItem>
               <MenuItem onClick={() => handleClick('realizations')}>Realizacje</MenuItem>
+              <MenuItem onClick={() => handleClick('contact')}>Kontakt</MenuItem>
             </MenuList>
           </Hidden>
         </Container>
@@ -78,6 +79,7 @@ export const Navbar = () => {
             <MenuItem onClick={() => handleClick('about-company')}>O firmie</MenuItem>
             <MenuItem onClick={() => handleClick('company-offer')}>Usługi</MenuItem>
             <MenuItem onClick={() => handleClick('realizations')}>Realizacje</MenuItem>
+            <MenuItem onClick={() => handleClick('contact')}>Kontakt</MenuItem>
           </Menu>
         </Hidden>
       </Toolbar>

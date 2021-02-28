@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({
   container: {
-    paddingBottom: 56,
+    padding: '0 24px 56px 24px',
   },
   imageGrid: {
     display: 'grid',
