@@ -60,7 +60,7 @@ export const JobCard = ({ title, description, isDesktop = false }: JobCardProps)
 
   return (
     <Card className={styles.desktopRoot}>
-      <CardActionArea>
+      <CardActionArea className={styles.actionAreaDesktop}>
         <CardContent>
           <Typography
             gutterBottom

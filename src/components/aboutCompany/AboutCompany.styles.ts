@@ -16,13 +16,16 @@ export const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'space-between',
 
-      '& > *': {
+      '& > *:nth-child(1)': {
+        flexBasis: '55%',
+      },
+      '& > *:nth-child(2)': {
         flexBasis: '45%',
       },
     },
   },
   text: {
-    maxWidth: 500,
+    maxWidth: 700,
   },
   img: {
     width: '100%',

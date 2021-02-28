@@ -11,6 +11,12 @@ export const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
+  actionAreaDesktop: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
   desktopRoot: {
     display: 'flex',
     height: cardDesktopHeight,

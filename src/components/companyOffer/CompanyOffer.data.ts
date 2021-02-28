@@ -5,41 +5,40 @@ export const companyOfferData = {
     {
       title: 'Usuwanie wgnieceń',
       description:
-        'Donec volutpat eleifend augue, quis feugiat est interdum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+        'Usuwanie wgnieceń karoserii samochodowych bez konieczności późniejszego lakierowania metodą bezinzwazyjną PDR',
     },
     {
       title: 'Korekta lakieru',
       description:
-        'Sed semper velit at porta tempor. Vestibulum eget nisi rutrum, pretium nunc nec, mollis leo. Sed at diam ut nibh pellentesque tempus eget feugiat nulla.',
+        'Poprawienie lakieru, odświeżenie koloru, nakładanie połysku i warstw ochronnych. Odswieża wygląd auta.',
     },
     {
       title: 'Polerowanie',
       description:
-        'Maecenas tempor quis libero sed tristique. Ut eleifend, purus viverra placerat placerat, ante dolor volutpat odio.',
+        'Obróbka wykańczająca, która ma na celu uzyskanie żądanej gładkości/chropowatości i połysku powierzchni przedmiotu polerowanego.',
     },
   ],
   [CarJobTypeEnum.Rent]: [
     {
       title: 'Samochody osobowe',
-      description:
-        'Donec volutpat eleifend augue, quis feugiat est interdum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+      description: 'Wynajem samochodów osobowych, różnych marek, dostosowane do potrzeb klienta',
     },
     {
       title: 'Busy',
       description:
-        'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+        'Wynajem busów, przystosowanych do przewożenia dużej liczby osób, bagaży, z licznymi umilaczami jazdy takie jak mocne głośniki, telewizor, podświetlenia LED, rozkładany stolik.',
     },
   ],
   [CarJobTypeEnum.Modernization]: [
     {
       title: 'Przebudowa całkowita',
       description:
-        'Donec volutpat eleifend augue, quis feugiat est interdum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada. Etiam id consequat ligula',
+        'Całkowita modernizacja i przebudowa pojazdu, nawet duzych gabarytów, czy pojazdów specjalnych.',
     },
     {
       title: 'Ulepszenia',
       description:
-        'Sed semper velit at porta tempor. Vestibulum eget nisi rutrum, pretium nunc nec, mollis leo. Sed at diam ut nibh pellentesque tempus egetsenectus et n',
+        'Tuningowanie - czyli ulepszanie pojazdu, zwiększenie mocy, wyglądu auta, dodanie aerodynamiczności. ',
     },
   ],
 };

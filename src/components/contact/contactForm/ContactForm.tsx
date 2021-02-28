@@ -16,20 +16,34 @@ export const ContactForm = () => {
 
       <Grid container spacing={2} direction="column" component="form">
         <Grid item>
-          <TextField fullWidth name="name" label="Imię" variant="outlined" />
+          <TextField fullWidth required name="name" label="Imię" variant="outlined" />
         </Grid>
         <Grid item>
-          <TextField fullWidth name="name" label="E-mail" variant="outlined" />
+          <TextField
+            fullWidth
+            required
+            name="email"
+            type="email"
+            label="E-mail"
+            variant="outlined"
+          />
         </Grid>
         <Grid item>
-          <TextField fullWidth name="name" label="Telefon" variant="outlined" />
+          <TextField
+            fullWidth
+            required
+            name="phone"
+            label="Telefon"
+            type="tel"
+            variant="outlined"
+          />
         </Grid>
         <Grid item>
           <TextField
             fullWidth
             multiline
             rows={3}
-            name="name"
+            name="message"
             label="Treść wiadomości..."
             variant="outlined"
           />
@@ -38,7 +52,8 @@ export const ContactForm = () => {
         <Grid item component={Box} display="flex" justifyContent="center">
           <Button
             color="primary"
-            type="submit"
+            // TODO form submit
+            // type="submit"
             variant="contained"
             size="large"
             className={styles.button}

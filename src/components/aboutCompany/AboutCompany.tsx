@@ -34,15 +34,16 @@ export const AboutCompany = () => {
 
       <div className={styles.flexContainer}>
         <Typography className={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada sapien id
-          ultrices bibendum. Donec volutpat eleifend augue, quis feugiat est interdum sit amet.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-          egestas. Vestibulum ante ipsum primis in faucibus orci luctus. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Pellentesque malesuada sapien id ultrices bibendum.
-          <br />
-          <br /> Donec volutpat eleifend augue, quis feugiat est interdum sit amet. Pellentesque
-          habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-          Vestibulum ante ipsum primis in faucibus orci luctus
+          Firma specjalizuje się w naprawach bezinwazyjnych <strong>PDR</strong> (wyciąganie
+          wgnieceń) oraz naprawach inwazyjnych za pomocą spotera. Dodatkowo wykonujemy korekty
+          lakieru, polerowanie reflektorów, nanoszenie powłok kwarcowych, ceramicznych, wosków
+          ochronnych. <br />U nas wykonasz wszystko od A do Z. Naprawiamy szkody parkingowe,
+          usuwanie zarysowań, spawamy plastiki, zderzaki, naprawiamy odpryski na szybach,
+          lakierujemy skóry i plastiki. Obszywamy równie kierownice i wykonujemy inne usługi
+          tapicerskie.
+          <br /> <br />
+          Firma <strong>LCAR</strong> to również wynajem samochodów osobowych, busów oraz wywrotek.
+          Prowadzimy usługę Door to Door, zostawiając u klienta wybrane auto zastępcze.
         </Typography>
 
         <div>{imgFluid && <Img fluid={imgFluid} alt="cars" className={styles.img} />}</div>
