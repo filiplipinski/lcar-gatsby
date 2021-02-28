@@ -28,6 +28,9 @@ const theme = createMuiTheme({
       colorSecondary: {
         color: palette.common.white,
       },
+      colorTextPrimary: {
+        color: palette.secondary.main,
+      },
     },
     MuiMenu: {
       list: {

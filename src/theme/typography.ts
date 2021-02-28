@@ -26,6 +26,11 @@ export const typography = (palette: Palette): TypographyOptions => ({
     textTransform: 'uppercase',
     color: palette.primary.main,
   },
+  h4: {
+    fontWeight: fontWeightBold,
+    textTransform: 'uppercase',
+    color: palette.primary.main,
+  },
   body1: {
     fontWeight: 400,
     fontSize: 16,

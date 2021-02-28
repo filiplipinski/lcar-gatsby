@@ -7,12 +7,27 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       backgroundColor: theme.palette.background.default,
     },
+    paddingBottom: 56,
   },
   cardsContainer: {
-    marginTop: 24,
-
-    [theme.breakpoints.up('md')]: {
-      marginTop: 48,
+    '&&': {
+      marginTop: 56,
     },
+
+    '& .slick-track': {
+      display: 'flex !important',
+    },
+
+    '& .slick-slide': {
+      height: 'auto',
+
+      '&>div': {
+        height: '100%',
+      },
+    },
+  },
+  sliderItem: {
+    outline: 'none',
+    height: '100%',
   },
 }));

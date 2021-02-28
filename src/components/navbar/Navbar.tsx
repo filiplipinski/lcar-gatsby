@@ -28,7 +28,9 @@ export const Navbar = () => {
   return (
     <AppBar position="static" className={styles.appbar}>
       <Toolbar>
-        <Container>{logoFluid && <Img fluid={logoFluid} alt="" className={styles.logo} />}</Container>
+        <Container>
+          {logoFluid && <Img fluid={logoFluid} alt="" className={styles.logo} />}
+        </Container>
       </Toolbar>
     </AppBar>
   );

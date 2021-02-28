@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  ignorePatterns: ['src/__generated__/gatsby-types.ts'],
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['babel', 'react-hooks', 'graphql', 'prettier'],
   // graph plugin is for: eslint-plugin-graphql

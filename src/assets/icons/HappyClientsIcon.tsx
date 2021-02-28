@@ -4,7 +4,13 @@ import { SvgIcon } from '@material-ui/core';
 
 export const HappyClientsIcon = ({ className }: { className?: string }) => {
   return (
-    <SvgIcon className={className} style={{ fontSize: 56 }} viewBox="0 0 56 56" width="56" height="56">
+    <SvgIcon
+      className={className}
+      style={{ fontSize: 56 }}
+      viewBox="0 0 56 56"
+      width="56"
+      height="56"
+    >
       <defs>
         <image
           width="56"

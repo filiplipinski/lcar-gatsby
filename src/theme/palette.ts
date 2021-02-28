@@ -15,7 +15,7 @@ export const palette = {
     white: '#fafafa', // OK
   },
   grey: {
-    100: '#e5e5e5',
+    100: '#e5e5e5', // ok, zamiast e1e1e1
     200: '#CCCCCC',
     300: '#B2B2B2', // moj
     500: '#898986',

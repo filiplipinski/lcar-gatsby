@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { Typography, useTheme, useMediaQuery } from '@material-ui/core';
-import clsx from 'clsx';
 
 import { Container } from 'components/container/Container';
 import { ExperienceIcon } from 'assets/icons/ExperienceIcon';
 import { HappyClientsIcon } from 'assets/icons/HappyClientsIcon';
 import { BestNo1Icon } from 'assets/icons/BestNo1Icon';
+import { SliderDot } from 'components/sliderDot/SliderDot';
 
 import { useStyles } from './CompanyPros.styles';
 
@@ -27,9 +27,9 @@ export const CompanyPros = () => {
         slidesToScroll={1}
         arrows={false}
         beforeChange={(current, next) => setActiveSlide(next)}
-        customPaging={(i) => {
-          return <div className={clsx(styles.dot, i === activeSlide && styles.activeDot)}>•</div>;
-        }}
+        customPaging={(i) => (
+          <SliderDot isActive={i === activeSlide} onClick={() => setActiveSlide(i)} />
+        )}
       >
         <div className={styles.sliderItem}>
           <ExperienceIcon />
