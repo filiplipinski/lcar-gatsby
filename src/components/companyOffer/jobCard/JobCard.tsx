@@ -28,7 +28,7 @@ export const query = graphql`
 export const JobCard = ({ title, description, isDesktop = false }: JobCardProps) => {
   const styles = useStyles();
   const imgData = useStaticQuery<GatsbyTypes.JobPlaceholderImgQuery>(query);
-  const imgFluid = useMemo(() => imgData.file?.childImageSharp?.fluid, []);
+  const imgFluid = useMemo(() => imgData.file?.childImageSharp?.fluid, [imgData]);
 
   if (!isDesktop) {
     return (

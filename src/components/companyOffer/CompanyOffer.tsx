@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Slider from 'react-slick';
 import { Typography, Box, useTheme, useMediaQuery } from '@material-ui/core';
 
@@ -8,24 +8,9 @@ import { SliderDot } from 'components/sliderDot/SliderDot';
 import { useStyles } from './CompanyOffer.styles';
 import { CarJobTypeSelection } from './carJobTypeSelection/CarJobTypeSelection';
 import { JobCard } from './jobCard/JobCard';
+import { CarJobTypeEnum } from './carJobTypeSelection/CarJobTypeSelection.types';
 
-const cardData = [
-  {
-    title: 'Usuwanie wgnieceń',
-    description:
-      'Donec volutpat eleifend augue, quis feugiat est interdum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-  },
-  {
-    title: 'Korekta lakieru',
-    description:
-      'Sed semper velit at porta tempor. Vestibulum eget nisi rutrum, pretium nunc nec, mollis leo. Sed at diam ut nibh pellentesque tempus eget feugiat nulla. Etiam id consequat ligula.',
-  },
-  {
-    title: 'Polerowanie',
-    description:
-      'Maecenas tempor quis libero sed tristique. Ut eleifend, purus viverra placerat placerat, ante dolor volutpat odio.',
-  },
-];
+import { companyOfferData } from './CompanyOffer.data';
 
 export const CompanyOffer = () => {
   const styles = useStyles();
@@ -33,6 +18,9 @@ export const CompanyOffer = () => {
   const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const [activeSlide, setActiveSlide] = useState(0);
+  const [selectedCarJobType, setCarJobType] = useState(CarJobTypeEnum.Detailing);
+
+  const dataToDisplay = useMemo(() => companyOfferData[selectedCarJobType], [selectedCarJobType]);
 
   return (
     <div className={styles.container}>
@@ -43,7 +31,7 @@ export const CompanyOffer = () => {
           </Typography>
         </Box>
 
-        <CarJobTypeSelection />
+        <CarJobTypeSelection selectedCarJobType={selectedCarJobType} onSelect={setCarJobType} />
       </Container>
 
       <Container disablePaddings className={styles.cardsContainer}>
@@ -60,7 +48,7 @@ export const CompanyOffer = () => {
             )}
             appendDots={(dot) => <div style={{ bottom: -40 }}>{dot}</div>}
           >
-            {cardData.map(({ title, description }) => (
+            {dataToDisplay.map(({ title, description }) => (
               <Box key={title} pl={2} pr={2} className={styles.sliderItem}>
                 <JobCard title={title} description={description} />
               </Box>
@@ -70,7 +58,7 @@ export const CompanyOffer = () => {
 
         {isDesktop && (
           <div>
-            {cardData.map(({ title, description }) => (
+            {dataToDisplay.map(({ title, description }) => (
               <Box key={title} mt={2} mb={2}>
                 <JobCard isDesktop title={title} description={description} />
               </Box>

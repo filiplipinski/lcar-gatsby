@@ -23,7 +23,7 @@ export const Navbar = () => {
   const styles = useStyles();
   const logoImgData = useStaticQuery<GatsbyTypes.LogoImgQuery>(query);
 
-  const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, []);
+  const logoFluid = useMemo(() => logoImgData.file?.childImageSharp?.fluid, [logoImgData]);
 
   return (
     <AppBar position="static" className={styles.appbar}>

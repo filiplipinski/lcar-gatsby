@@ -32,14 +32,14 @@ export const HeroBanner = () => {
       (edge) => edge.node.childImageSharp?.fluid?.originalName === 'banner.jpg',
     );
     return foundImg?.node.childImageSharp?.fluid;
-  }, []);
+  }, [heroImgData]);
 
   const bannerShadowFluid = useMemo(() => {
     const foundImg = heroImgData.allFile.edges.find(
       (edge) => edge.node.childImageSharp?.fluid?.originalName === 'banner-shadow.png',
     );
     return foundImg?.node.childImageSharp?.fluid;
-  }, []);
+  }, [heroImgData]);
 
   return (
     <div className={styles.container}>

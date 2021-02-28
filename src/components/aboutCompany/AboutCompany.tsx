@@ -22,7 +22,7 @@ export const query = graphql`
 export const AboutCompany = () => {
   const styles = useStyles();
   const imgData = useStaticQuery<GatsbyTypes.CarsImgQuery>(query);
-  const imgFluid = useMemo(() => imgData.file?.childImageSharp?.fluid, []);
+  const imgFluid = useMemo(() => imgData.file?.childImageSharp?.fluid, [imgData]);
 
   return (
     <Container className={styles.wrapper}>

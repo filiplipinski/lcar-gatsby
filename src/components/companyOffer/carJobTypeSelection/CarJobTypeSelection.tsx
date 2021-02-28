@@ -3,7 +3,7 @@ import { Button, Menu, MenuItem, useTheme, useMediaQuery, Box } from '@material-
 import { ExpandMore } from '@material-ui/icons';
 
 import { useStyles } from './CarJobTypeSelection.styles';
-import { CarJobTypeEnum } from './CarJobTypeSelection.types';
+import { CarJobTypeEnum, CarJobTypeSelectionProps } from './CarJobTypeSelection.types';
 
 const carJobTypeLabelMap = {
   [CarJobTypeEnum.Detailing]: 'Car detailing',
@@ -11,18 +11,20 @@ const carJobTypeLabelMap = {
   [CarJobTypeEnum.Modernization]: 'Modernizacja pojazdów',
 };
 
-export const CarJobTypeSelection = () => {
+export const CarJobTypeSelection = ({ selectedCarJobType, onSelect }: CarJobTypeSelectionProps) => {
   const styles = useStyles();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-  const [selectedCarJobType, setCarJobType] = useState<CarJobTypeEnum>(CarJobTypeEnum.Detailing);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleMenuItemClick = useCallback((carJobType: CarJobTypeEnum) => {
-    setCarJobType(carJobType);
-    setAnchorEl(null);
-  }, []);
-  const handleClose = () => useCallback(() => setAnchorEl(null), []);
+  const handleMenuItemClick = useCallback(
+    (carJobType: CarJobTypeEnum) => {
+      onSelect(carJobType);
+      setAnchorEl(null);
+    },
+    [onSelect, setAnchorEl],
+  );
+  const handleClose = () => useCallback(() => setAnchorEl(null), [setAnchorEl]);
 
   if (!isDesktop) {
     return (
