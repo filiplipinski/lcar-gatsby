@@ -2737,6 +2737,11 @@ declare namespace GatsbyTypes {
     }>;
   };
 
+  type GatsbyImageSharpFluid_noBase64Fragment = Pick<
+    ImageSharpFluid,
+    'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+  >;
+
   type RealizationsImgsQueryVariables = Exact<{ [key: string]: never }>;
 
   type RealizationsImgsQuery = {
@@ -2804,11 +2809,6 @@ declare namespace GatsbyTypes {
   type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<
     ImageSharpFluid,
     'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
-  >;
-
-  type GatsbyImageSharpFluid_noBase64Fragment = Pick<
-    ImageSharpFluid,
-    'aspectRatio' | 'src' | 'srcSet' | 'sizes'
   >;
 
   type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<
