@@ -1558,6 +1558,8 @@ declare namespace GatsbyTypes {
   type Query_siteArgs = {
     buildTime: Maybe<DateQueryOperatorInput>;
     siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+    port: Maybe<IntQueryOperatorInput>;
+    host: Maybe<StringQueryOperatorInput>;
     polyfill: Maybe<BooleanQueryOperatorInput>;
     pathPrefix: Maybe<StringQueryOperatorInput>;
     id: Maybe<StringQueryOperatorInput>;
@@ -1658,6 +1660,8 @@ declare namespace GatsbyTypes {
   type Site = Node & {
     readonly buildTime: Maybe<Scalars['Date']>;
     readonly siteMetadata: Maybe<SiteSiteMetadata>;
+    readonly port: Maybe<Scalars['Int']>;
+    readonly host: Maybe<Scalars['String']>;
     readonly polyfill: Maybe<Scalars['Boolean']>;
     readonly pathPrefix: Maybe<Scalars['String']>;
     readonly id: Scalars['ID'];
@@ -1857,6 +1861,8 @@ declare namespace GatsbyTypes {
     | 'siteMetadata.url'
     | 'siteMetadata.keywords'
     | 'siteMetadata.image'
+    | 'port'
+    | 'host'
     | 'polyfill'
     | 'pathPrefix'
     | 'id'
@@ -1949,6 +1955,8 @@ declare namespace GatsbyTypes {
   type SiteFilterInput = {
     readonly buildTime: Maybe<DateQueryOperatorInput>;
     readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+    readonly port: Maybe<IntQueryOperatorInput>;
+    readonly host: Maybe<StringQueryOperatorInput>;
     readonly polyfill: Maybe<BooleanQueryOperatorInput>;
     readonly pathPrefix: Maybe<StringQueryOperatorInput>;
     readonly id: Maybe<StringQueryOperatorInput>;
@@ -2673,30 +2681,10 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars['Int']>;
   };
 
-  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
+  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-  type CarsImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
-
-  type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type HeroImgQuery = {
-    readonly allFile: {
-      readonly edges: ReadonlyArray<{
-        readonly node: {
-          readonly childImageSharp: Maybe<{
-            readonly fluid: Maybe<
-              Pick<ImageSharpFluid, 'originalName'> & GatsbyImageSharpFluid_noBase64Fragment
-            >;
-          }>;
-        };
-      }>;
-    };
+  type PagesQueryQuery = {
+    readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
   };
 
   type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
@@ -2709,9 +2697,9 @@ declare namespace GatsbyTypes {
     }>;
   };
 
-  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
+  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
 
-  type LogoImgQuery = {
+  type CarsImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2729,6 +2717,16 @@ declare namespace GatsbyTypes {
     }>;
   };
 
+  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
   type RealizationsImgsQueryVariables = Exact<{ [key: string]: never }>;
 
   type RealizationsImgsQuery = {
@@ -2737,6 +2735,22 @@ declare namespace GatsbyTypes {
         readonly node: Pick<File, 'base'> & {
           readonly childImageSharp: Maybe<{
             readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+          }>;
+        };
+      }>;
+    };
+  };
+
+  type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type HeroImgQuery = {
+    readonly allFile: {
+      readonly edges: ReadonlyArray<{
+        readonly node: {
+          readonly childImageSharp: Maybe<{
+            readonly fluid: Maybe<
+              Pick<ImageSharpFluid, 'originalName'> & GatsbyImageSharpFluid_noBase64Fragment
+            >;
           }>;
         };
       }>;

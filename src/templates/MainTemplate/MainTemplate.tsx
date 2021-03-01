@@ -5,6 +5,13 @@ import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
 import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 
+import '@fontsource/sen/latin-400.css';
+import '@fontsource/sen/latin-700.css';
+import '@fontsource/sen/latin-800.css';
+import '@fontsource/sen/latin-ext-400.css';
+import '@fontsource/sen/latin-ext-700.css';
+import '@fontsource/sen/latin-ext-800.css';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
