@@ -2159,6 +2159,8 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.pluginOptions.component'
     | 'pluginCreator.pluginOptions.options.emitWarning'
     | 'pluginCreator.pluginOptions.options.failOnError'
+    | 'pluginCreator.pluginOptions.options.extensions'
+    | 'pluginCreator.pluginOptions.options.exclude'
     | 'pluginCreator.pluginOptions.files'
     | 'pluginCreator.pluginOptions.name'
     | 'pluginCreator.pluginOptions.path'
@@ -2186,6 +2188,7 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.pluginOptions.styles'
     | 'pluginCreator.pluginOptions.rule.include'
     | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
+    | 'pluginCreator.pluginOptions.trackingIds'
     | 'pluginCreator.pluginOptions.pathCheck'
     | 'pluginCreator.nodeAPIs'
     | 'pluginCreator.browserAPIs'
@@ -2380,6 +2383,8 @@ declare namespace GatsbyTypes {
     | 'pluginOptions.component'
     | 'pluginOptions.options.emitWarning'
     | 'pluginOptions.options.failOnError'
+    | 'pluginOptions.options.extensions'
+    | 'pluginOptions.options.exclude'
     | 'pluginOptions.files'
     | 'pluginOptions.name'
     | 'pluginOptions.path'
@@ -2407,6 +2412,7 @@ declare namespace GatsbyTypes {
     | 'pluginOptions.styles'
     | 'pluginOptions.rule.include'
     | 'pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
+    | 'pluginOptions.trackingIds'
     | 'pluginOptions.pathCheck'
     | 'nodeAPIs'
     | 'browserAPIs'
@@ -2556,6 +2562,7 @@ declare namespace GatsbyTypes {
     readonly styles: Maybe<Scalars['String']>;
     readonly rule: Maybe<SitePluginPluginOptionsRule>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchema>;
+    readonly trackingIds: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
     readonly pathCheck: Maybe<Scalars['Boolean']>;
   };
 
@@ -2604,17 +2611,22 @@ declare namespace GatsbyTypes {
     readonly styles: Maybe<StringQueryOperatorInput>;
     readonly rule: Maybe<SitePluginPluginOptionsRuleFilterInput>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchemaFilterInput>;
+    readonly trackingIds: Maybe<StringQueryOperatorInput>;
     readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   };
 
   type SitePluginPluginOptionsOptions = {
     readonly emitWarning: Maybe<Scalars['Boolean']>;
     readonly failOnError: Maybe<Scalars['Boolean']>;
+    readonly extensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+    readonly exclude: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   };
 
   type SitePluginPluginOptionsOptionsFilterInput = {
     readonly emitWarning: Maybe<BooleanQueryOperatorInput>;
     readonly failOnError: Maybe<BooleanQueryOperatorInput>;
+    readonly extensions: Maybe<StringQueryOperatorInput>;
+    readonly exclude: Maybe<StringQueryOperatorInput>;
   };
 
   type SitePluginPluginOptionsRule = {
@@ -2677,6 +2689,12 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars['Int']>;
   };
 
+  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>;
+
+  type PagesQueryQuery = {
+    readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
+  };
+
   type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type CarsImgQuery = {
@@ -2687,9 +2705,9 @@ declare namespace GatsbyTypes {
     }>;
   };
 
-  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
+  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
 
-  type JobPlaceholderImgQuery = {
+  type LogoImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2723,6 +2741,16 @@ declare namespace GatsbyTypes {
     };
   };
 
+  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type JobPlaceholderImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
   type RealizationsImgsQueryVariables = Exact<{ [key: string]: never }>;
 
   type RealizationsImgsQuery = {
@@ -2735,16 +2763,6 @@ declare namespace GatsbyTypes {
         };
       }>;
     };
-  };
-
-  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type LogoImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
   };
 
   type GatsbyImageSharpFixedFragment = Pick<

@@ -100,6 +100,10 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: { trackingIds: ['G-S90LRKRNNL'] },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-material-ui',
     'gatsby-plugin-smoothscroll',
