@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { Box, Typography, Link, useTheme, useMediaQuery } from '@material-ui/core';
-import { Facebook, YouTube, ExpandLess, Phone } from '@material-ui/icons';
+import { Facebook, YouTube, ExpandLess, Phone, Instagram } from '@material-ui/icons';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -52,6 +52,14 @@ export const Footer: React.FC = () => {
             <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
               <YouTube className={styles.youtubeIcon} />
             </Link>
+
+            <Link
+              href="https://www.instagram.com/lcarradom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className={styles.instagramIcon} />
+            </Link>
           </Box>
 
           <ExpandLess onClick={handleClick} color="secondary" className={styles.expandLessIcon} />
@@ -84,6 +92,14 @@ export const Footer: React.FC = () => {
 
             <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
               <YouTube className={styles.youtubeIcon} />
+            </Link>
+
+            <Link
+              href="https://www.instagram.com/lcarradom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className={styles.instagramIcon} />
             </Link>
           </Box>
         </div>
@@ -138,58 +154,3 @@ export const Footer: React.FC = () => {
     </div>
   );
 };
-
-// TODO: remove code
-// <div className={styles.container}>
-//   <Container>
-//     <div className={styles.innerWrapper}>
-//       <div className={styles.flexContainer}>
-//         <div>
-//           <Typography variant="h3">Kontakt</Typography>
-//           <Typography>
-//             <Typography component="span" color="secondary">
-//               +48
-//             </Typography>{' '}
-//             539 943 336 <br />
-//             Pon.-Pt. 8-18
-//           </Typography>
-//         </div>
-
-//         <div>
-//           <Typography variant="h3">Email</Typography>
-
-//           <Typography>
-//             <Typography component="span" color="secondary">
-//               karol.lipinski
-//             </Typography>
-//             @lcar.pl
-//           </Typography>
-//         </div>
-
-//         <div>
-//           <Typography variant="h3">Adres</Typography>
-
-//           <Typography component="strong">Karol Lipiński</Typography>
-
-//           <Typography>
-//             ul.{' '}
-//             <Typography component="span" color="secondary">
-//               Złota 48
-//             </Typography>{' '}
-//             <br /> 26-604 Radom
-//           </Typography>
-//         </div>
-//       </div>
-
-//       <div className={styles.rights}>
-//         <Typography component="strong">
-//           <Typography component="span" color="secondary">
-//             LCAR.PL
-//           </Typography>{' '}
-//           ® 2020
-//           <i style={{ fontSize: '12px', display: 'block' }}>Strona w budowie</i>
-//         </Typography>
-//       </div>
-//     </div>
-//   </Container>
-// </div>
