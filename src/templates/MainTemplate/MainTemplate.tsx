@@ -8,17 +8,10 @@ import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const linkData = [
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap',
-  },
-];
-
 const MainTemplate: React.FC = ({ children }) => {
   return (
     <>
-      <Helmet lang="pl" title="LCAR Auto Detailing" link={linkData} />
+      <Helmet lang="pl" title="LCAR Auto Detailing" />
 
       <ThemeProvider>
         <Navbar />

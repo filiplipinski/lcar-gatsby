@@ -104,6 +104,22 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: { trackingIds: ['G-S90LRKRNNL'] },
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Sen',
+              variants: ['400', '700', '800'],
+              subsets: ['latin', 'latin-ext'],
+              fontDisplay: 'optional',
+            },
+          ],
+        },
+        usePreload: true, // default value
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-material-ui',
     'gatsby-plugin-smoothscroll',
