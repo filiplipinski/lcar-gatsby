@@ -29,5 +29,6 @@ export const useStyles = makeStyles((theme) => ({
   sliderItem: {
     outline: 'none',
     height: '100%',
+    padding: '0 16px',
   },
 }));

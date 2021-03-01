@@ -46,12 +46,12 @@ export const CompanyOffer = () => {
             customPaging={(i) => (
               <SliderDot isActive={i === activeSlide} onClick={() => setActiveSlide(i)} />
             )}
-            appendDots={(dot) => <div style={{ bottom: -40 }}>{dot}</div>}
+            appendDots={(dot) => <ul style={{ bottom: -40 }}>{dot}</ul>}
           >
             {dataToDisplay.map(({ title, description }) => (
-              <Box key={title} pl={2} pr={2} className={styles.sliderItem}>
+              <div key={title} className={styles.sliderItem}>
                 <JobCard title={title} description={description} />
-              </Box>
+              </div>
             ))}
           </Slider>
         </Container>

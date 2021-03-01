@@ -2745,6 +2745,16 @@ declare namespace GatsbyTypes {
     }>;
   };
 
+  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoWhiteImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
   type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type HeroImgQuery = {
@@ -2759,16 +2769,6 @@ declare namespace GatsbyTypes {
         };
       }>;
     };
-  };
-
-  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type LogoWhiteImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
   };
 
   type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
