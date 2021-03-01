@@ -8,7 +8,7 @@ import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// TODO dorobić useStaticQuery
+// TODO dorobić useStaticQuery i ujednolocic z gatsby config tags
 const title = 'LCAR Auto Detailing Radom';
 const description =
   'Specjalizujemy się w naprawach bezinwazyjnych PDR (wyciąganie wgnieceń) oraz naprawach za pomocą spotera. Dodatkowo wykonujemy korekty lakieru, polerowanie reflektorów, nanoszenie powłok kwarcowych, ceramicznych, a także wosków ochronnych';

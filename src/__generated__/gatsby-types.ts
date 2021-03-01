@@ -1558,8 +1558,6 @@ declare namespace GatsbyTypes {
   type Query_siteArgs = {
     buildTime: Maybe<DateQueryOperatorInput>;
     siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-    port: Maybe<IntQueryOperatorInput>;
-    host: Maybe<StringQueryOperatorInput>;
     polyfill: Maybe<BooleanQueryOperatorInput>;
     pathPrefix: Maybe<StringQueryOperatorInput>;
     id: Maybe<StringQueryOperatorInput>;
@@ -1660,8 +1658,6 @@ declare namespace GatsbyTypes {
   type Site = Node & {
     readonly buildTime: Maybe<Scalars['Date']>;
     readonly siteMetadata: Maybe<SiteSiteMetadata>;
-    readonly port: Maybe<Scalars['Int']>;
-    readonly host: Maybe<Scalars['String']>;
     readonly polyfill: Maybe<Scalars['Boolean']>;
     readonly pathPrefix: Maybe<Scalars['String']>;
     readonly id: Scalars['ID'];
@@ -1861,8 +1857,6 @@ declare namespace GatsbyTypes {
     | 'siteMetadata.url'
     | 'siteMetadata.keywords'
     | 'siteMetadata.image'
-    | 'port'
-    | 'host'
     | 'polyfill'
     | 'pathPrefix'
     | 'id'
@@ -1955,8 +1949,6 @@ declare namespace GatsbyTypes {
   type SiteFilterInput = {
     readonly buildTime: Maybe<DateQueryOperatorInput>;
     readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-    readonly port: Maybe<IntQueryOperatorInput>;
-    readonly host: Maybe<StringQueryOperatorInput>;
     readonly polyfill: Maybe<BooleanQueryOperatorInput>;
     readonly pathPrefix: Maybe<StringQueryOperatorInput>;
     readonly id: Maybe<StringQueryOperatorInput>;
@@ -2187,8 +2179,6 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.pluginOptions.rule.include'
     | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
     | 'pluginCreator.pluginOptions.trackingIds'
-    | 'pluginCreator.pluginOptions.fonts.google'
-    | 'pluginCreator.pluginOptions.usePreload'
     | 'pluginCreator.pluginOptions.pathCheck'
     | 'pluginCreator.nodeAPIs'
     | 'pluginCreator.browserAPIs'
@@ -2411,12 +2401,6 @@ declare namespace GatsbyTypes {
     | 'pluginOptions.rule.include'
     | 'pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
     | 'pluginOptions.trackingIds'
-    | 'pluginOptions.fonts.google'
-    | 'pluginOptions.fonts.google.family'
-    | 'pluginOptions.fonts.google.variants'
-    | 'pluginOptions.fonts.google.subsets'
-    | 'pluginOptions.fonts.google.fontDisplay'
-    | 'pluginOptions.usePreload'
     | 'pluginOptions.pathCheck'
     | 'nodeAPIs'
     | 'browserAPIs'
@@ -2567,8 +2551,6 @@ declare namespace GatsbyTypes {
     readonly rule: Maybe<SitePluginPluginOptionsRule>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchema>;
     readonly trackingIds: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-    readonly fonts: Maybe<SitePluginPluginOptionsFonts>;
-    readonly usePreload: Maybe<Scalars['Boolean']>;
     readonly pathCheck: Maybe<Scalars['Boolean']>;
   };
 
@@ -2618,35 +2600,7 @@ declare namespace GatsbyTypes {
     readonly rule: Maybe<SitePluginPluginOptionsRuleFilterInput>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchemaFilterInput>;
     readonly trackingIds: Maybe<StringQueryOperatorInput>;
-    readonly fonts: Maybe<SitePluginPluginOptionsFontsFilterInput>;
-    readonly usePreload: Maybe<BooleanQueryOperatorInput>;
     readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
-  };
-
-  type SitePluginPluginOptionsFonts = {
-    readonly google: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFontsGoogle>>>;
-  };
-
-  type SitePluginPluginOptionsFontsFilterInput = {
-    readonly google: Maybe<SitePluginPluginOptionsFontsGoogleFilterListInput>;
-  };
-
-  type SitePluginPluginOptionsFontsGoogle = {
-    readonly family: Maybe<Scalars['String']>;
-    readonly variants: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-    readonly subsets: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-    readonly fontDisplay: Maybe<Scalars['String']>;
-  };
-
-  type SitePluginPluginOptionsFontsGoogleFilterInput = {
-    readonly family: Maybe<StringQueryOperatorInput>;
-    readonly variants: Maybe<StringQueryOperatorInput>;
-    readonly subsets: Maybe<StringQueryOperatorInput>;
-    readonly fontDisplay: Maybe<StringQueryOperatorInput>;
-  };
-
-  type SitePluginPluginOptionsFontsGoogleFilterListInput = {
-    readonly elemMatch: Maybe<SitePluginPluginOptionsFontsGoogleFilterInput>;
   };
 
   type SitePluginPluginOptionsOptions = {
@@ -2719,42 +2673,6 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars['Int']>;
   };
 
-  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>;
-
-  type PagesQueryQuery = {
-    readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
-  };
-
-  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type CarsImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
-
-  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type JobPlaceholderImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
-
-  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type LogoWhiteImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
-
   type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type HeroImgQuery = {
@@ -2769,6 +2687,16 @@ declare namespace GatsbyTypes {
         };
       }>;
     };
+  };
+
+  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type JobPlaceholderImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
   };
 
   type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
@@ -2919,4 +2847,24 @@ declare namespace GatsbyTypes {
     ImageSharpSizes,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >;
+
+  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoWhiteImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
+  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type CarsImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
 }

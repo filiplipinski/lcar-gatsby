@@ -1,12 +1,26 @@
 const path = require('path');
 require('dotenv').config();
 
-const siteTitle = 'LCAR Auto Detailing';
-const siteDescription = 'Renowacja aut, wynajem aut, modernizacja pojazdów';
+// TODO: ujednolocic dane te z mainTemplate SEO
+const siteTitle = 'LCAR Auto Detailing Radom';
+const siteDescription =
+  'Specjalizujemy się w naprawach bezinwazyjnych PDR (wyciąganie wgnieceń) oraz naprawach za pomocą spotera. Dodatkowo wykonujemy korekty lakieru, polerowanie reflektorów, nanoszenie powłok kwarcowych, ceramicznych, a także wosków ochronnych';
 const siteAuthor = 'Filip Lipiński';
 const siteUrl = 'https://www.lcar.pl';
 const siteImage = `${siteUrl}/icons/icon_512x512.png`;
-const siteKeywords = ['gatsby', 'typescript', 'starter', 'javascript', 'react'];
+const siteKeywords = [
+  'lcar',
+  'auto',
+  'detailing',
+  'radom',
+  'usuwanie wgnieceń',
+  'koretka lakieru',
+  'polerowanie',
+  'czyszczenie',
+  'wynajem',
+  'tuning',
+  'modernizacja',
+];
 
 module.exports = {
   siteMetadata: {
@@ -52,8 +66,8 @@ module.exports = {
         short_name: 'LCAR',
         description: siteDescription,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#000`,
+        background_color: `#f7f7f7`, // palette.background.default
+        theme_color: `#2d2e28`, // palette.primary.main
         display: `minimal-ui`,
         icon: 'src/assets/images/icon.png',
         // icons: [
@@ -103,22 +117,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: { trackingIds: ['G-S90LRKRNNL'] },
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: 'Sen',
-              variants: ['400', '700', '800'],
-              subsets: ['latin', 'latin-ext'],
-              fontDisplay: 'optional',
-            },
-          ],
-        },
-        usePreload: true, // default value
-      },
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-material-ui',
