@@ -2,7 +2,7 @@ const path = require('path');
 require('dotenv').config();
 
 // TODO: ujednolocic dane te z mainTemplate SEO
-const siteTitle = 'LCAR Auto Detailing Radom';
+const siteTitle = 'LCAR Auto Detailing - Radom';
 const siteDescription =
   'Specjalizujemy się w naprawach bezinwazyjnych PDR (wyciąganie wgnieceń) oraz naprawach za pomocą spotera. Dodatkowo wykonujemy korekty lakieru, polerowanie reflektorów, nanoszenie powłok kwarcowych, ceramicznych, a także wosków ochronnych';
 const siteAuthor = 'Filip Lipiński';

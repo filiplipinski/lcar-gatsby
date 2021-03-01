@@ -2673,6 +2673,16 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars['Int']>;
   };
 
+  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type CarsImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
   type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type HeroImgQuery = {
@@ -2702,6 +2712,16 @@ declare namespace GatsbyTypes {
   type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type LogoImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
+  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoWhiteImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2847,24 +2867,4 @@ declare namespace GatsbyTypes {
     ImageSharpSizes,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >;
-
-  type LogoWhiteImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type LogoWhiteImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
-
-  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type CarsImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
-  };
 }
