@@ -2687,9 +2687,9 @@ declare namespace GatsbyTypes {
     readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
   };
 
-  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
+  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
 
-  type JobPlaceholderImgQuery = {
+  type CarsImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2697,9 +2697,9 @@ declare namespace GatsbyTypes {
     }>;
   };
 
-  type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
+  type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
 
-  type CarsImgQuery = {
+  type JobPlaceholderImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2715,6 +2715,22 @@ declare namespace GatsbyTypes {
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
       }>;
     }>;
+  };
+
+  type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type HeroImgQuery = {
+    readonly allFile: {
+      readonly edges: ReadonlyArray<{
+        readonly node: {
+          readonly childImageSharp: Maybe<{
+            readonly fluid: Maybe<
+              Pick<ImageSharpFluid, 'originalName'> & GatsbyImageSharpFluid_noBase64Fragment
+            >;
+          }>;
+        };
+      }>;
+    };
   };
 
   type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
@@ -2735,22 +2751,6 @@ declare namespace GatsbyTypes {
         readonly node: Pick<File, 'base'> & {
           readonly childImageSharp: Maybe<{
             readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-          }>;
-        };
-      }>;
-    };
-  };
-
-  type HeroImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type HeroImgQuery = {
-    readonly allFile: {
-      readonly edges: ReadonlyArray<{
-        readonly node: {
-          readonly childImageSharp: Maybe<{
-            readonly fluid: Maybe<
-              Pick<ImageSharpFluid, 'originalName'> & GatsbyImageSharpFluid_noBase64Fragment
-            >;
           }>;
         };
       }>;

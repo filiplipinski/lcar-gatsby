@@ -77,6 +77,16 @@ const theme = createMuiTheme({
         borderRadius: 0,
       },
     },
+    MuiFormHelperText: {
+      root: {
+        margin: 0,
+        paddingTop: 3,
+        fontSize: 14,
+        lineHeight: '14px',
+        // TODO: move to palette
+        color: '#ff0033',
+      },
+    },
   },
 });
 

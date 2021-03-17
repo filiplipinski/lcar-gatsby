@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { init } from 'emailjs-com';
 
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
@@ -14,6 +15,10 @@ import '@fontsource/sen/latin-ext-800.css';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+const emailJsUserId = 'user_sJhOok4ZtmagF3sADbqNd';
+
+init(emailJsUserId);
 
 // TODO dorobić useStaticQuery i ujednolocic z gatsby config tags
 const title = 'LCAR Auto Detailing - Radom';
