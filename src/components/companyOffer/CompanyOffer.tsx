@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import Slider from 'react-slick';
-import { Typography, Box, useTheme, useMediaQuery } from '@material-ui/core';
+import { Typography, Box, useTheme, useMediaQuery, Grow } from '@material-ui/core';
 
 import { Container } from 'components/container/Container';
 import { SliderDot } from 'components/sliderDot/SliderDot';
@@ -59,10 +59,12 @@ export const CompanyOffer = () => {
 
       {isDesktop && (
         <Container className={styles.cardsContainer}>
-          {dataToDisplay.map(({ title, description }) => (
-            <Box key={title} mt={2} mb={2}>
-              <JobCard isDesktop title={title} description={description} />
-            </Box>
+          {dataToDisplay.map(({ title, description }, index) => (
+            <Grow in timeout={(index + 1) * 200} style={{ transformOrigin: '0 50%' }} key={title}>
+              <Box key={title} mt={2} mb={2}>
+                <JobCard isDesktop title={title} description={description} />
+              </Box>
+            </Grow>
           ))}
         </Container>
       )}

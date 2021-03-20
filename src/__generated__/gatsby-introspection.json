@@ -946,26 +946,6 @@
                 "defaultValue": null
               },
               {
-                "name": "port",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "IntQueryOperatorInput",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "host",
-                "description": "",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "StringQueryOperatorInput",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
                 "name": "polyfill",
                 "description": "",
                 "type": {
@@ -12569,30 +12549,6 @@
             "deprecationReason": null
           },
           {
-            "name": "port",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "host",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "polyfill",
             "description": null,
             "args": [],
@@ -12810,26 +12766,6 @@
             "defaultValue": null
           },
           {
-            "name": "port",
-            "description": "",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "IntQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "host",
-            "description": "",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "polyfill",
             "description": "",
             "type": {
@@ -12979,18 +12915,6 @@
           },
           {
             "name": "siteMetadata___image",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "port",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "host",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -14403,6 +14327,46 @@
             "defaultValue": null
           },
           {
+            "name": "stylesProvider",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsStylesProviderFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "fonts",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsFontsFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "modules",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "webFontsConfig",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfigFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "pathCheck",
             "description": "",
             "type": {
@@ -14481,6 +14445,214 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsStylesProviderFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "injectFirst",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsFontsFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "google",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsFontsGoogleFilterListInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsFontsGoogleFilterListInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsFontsGoogleFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsFontsGoogleFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "family",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "variants",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "subsets",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "fonts",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfigFontsFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFontsFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "google",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterListInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterListInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "family",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "variants",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "subsets",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null
@@ -15619,6 +15791,58 @@
             "deprecationReason": null
           },
           {
+            "name": "stylesProvider",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsStylesProvider",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "fonts",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsFonts",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "modules",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "webFontsConfig",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfig",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pathCheck",
             "description": null,
             "args": [],
@@ -15707,6 +15931,216 @@
               "kind": "SCALAR",
               "name": "Boolean",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsStylesProvider",
+        "description": null,
+        "fields": [
+          {
+            "name": "injectFirst",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsFonts",
+        "description": null,
+        "fields": [
+          {
+            "name": "google",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "SitePluginPluginOptionsFontsGoogle",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsFontsGoogle",
+        "description": null,
+        "fields": [
+          {
+            "name": "family",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "variants",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "subsets",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfig",
+        "description": null,
+        "fields": [
+          {
+            "name": "fonts",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsWebFontsConfigFonts",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFonts",
+        "description": null,
+        "fields": [
+          {
+            "name": "google",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogle",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsWebFontsConfigFontsGoogle",
+        "description": null,
+        "fields": [
+          {
+            "name": "family",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "variants",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "subsets",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17167,6 +17601,24 @@
           },
           {
             "name": "pluginCreator___pluginOptions___trackingIds",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___stylesProvider___injectFirst",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___fonts___google",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___modules",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -20849,6 +21301,48 @@
           },
           {
             "name": "pluginOptions___trackingIds",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___stylesProvider___injectFirst",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___fonts___google",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___fonts___google___family",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___fonts___google___variants",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___fonts___google___subsets",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___modules",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___webFontsConfig___fonts___google",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

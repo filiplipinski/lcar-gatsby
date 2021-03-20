@@ -4,14 +4,6 @@ import { init } from 'emailjs-com';
 
 import { Navbar } from 'components/navbar/Navbar';
 import { Footer } from 'components/footer/Footer';
-import { ThemeProvider } from 'providers/themeProvider/ThemeProvider';
-
-import '@fontsource/sen/latin-400.css';
-import '@fontsource/sen/latin-700.css';
-import '@fontsource/sen/latin-800.css';
-import '@fontsource/sen/latin-ext-400.css';
-import '@fontsource/sen/latin-ext-700.css';
-import '@fontsource/sen/latin-ext-800.css';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -45,11 +37,9 @@ const MainTemplate: React.FC = ({ children }) => {
         {/* <meta property="og:image" content={image} /> */}
       </Helmet>
 
-      <ThemeProvider>
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
-      </ThemeProvider>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };

@@ -1558,8 +1558,6 @@ declare namespace GatsbyTypes {
   type Query_siteArgs = {
     buildTime: Maybe<DateQueryOperatorInput>;
     siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-    port: Maybe<IntQueryOperatorInput>;
-    host: Maybe<StringQueryOperatorInput>;
     polyfill: Maybe<BooleanQueryOperatorInput>;
     pathPrefix: Maybe<StringQueryOperatorInput>;
     id: Maybe<StringQueryOperatorInput>;
@@ -1660,8 +1658,6 @@ declare namespace GatsbyTypes {
   type Site = Node & {
     readonly buildTime: Maybe<Scalars['Date']>;
     readonly siteMetadata: Maybe<SiteSiteMetadata>;
-    readonly port: Maybe<Scalars['Int']>;
-    readonly host: Maybe<Scalars['String']>;
     readonly polyfill: Maybe<Scalars['Boolean']>;
     readonly pathPrefix: Maybe<Scalars['String']>;
     readonly id: Scalars['ID'];
@@ -1861,8 +1857,6 @@ declare namespace GatsbyTypes {
     | 'siteMetadata.url'
     | 'siteMetadata.keywords'
     | 'siteMetadata.image'
-    | 'port'
-    | 'host'
     | 'polyfill'
     | 'pathPrefix'
     | 'id'
@@ -1955,8 +1949,6 @@ declare namespace GatsbyTypes {
   type SiteFilterInput = {
     readonly buildTime: Maybe<DateQueryOperatorInput>;
     readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-    readonly port: Maybe<IntQueryOperatorInput>;
-    readonly host: Maybe<StringQueryOperatorInput>;
     readonly polyfill: Maybe<BooleanQueryOperatorInput>;
     readonly pathPrefix: Maybe<StringQueryOperatorInput>;
     readonly id: Maybe<StringQueryOperatorInput>;
@@ -2187,6 +2179,9 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.pluginOptions.rule.include'
     | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
     | 'pluginCreator.pluginOptions.trackingIds'
+    | 'pluginCreator.pluginOptions.stylesProvider.injectFirst'
+    | 'pluginCreator.pluginOptions.fonts.google'
+    | 'pluginCreator.pluginOptions.modules'
     | 'pluginCreator.pluginOptions.pathCheck'
     | 'pluginCreator.nodeAPIs'
     | 'pluginCreator.browserAPIs'
@@ -2409,6 +2404,13 @@ declare namespace GatsbyTypes {
     | 'pluginOptions.rule.include'
     | 'pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
     | 'pluginOptions.trackingIds'
+    | 'pluginOptions.stylesProvider.injectFirst'
+    | 'pluginOptions.fonts.google'
+    | 'pluginOptions.fonts.google.family'
+    | 'pluginOptions.fonts.google.variants'
+    | 'pluginOptions.fonts.google.subsets'
+    | 'pluginOptions.modules'
+    | 'pluginOptions.webFontsConfig.fonts.google'
     | 'pluginOptions.pathCheck'
     | 'nodeAPIs'
     | 'browserAPIs'
@@ -2559,6 +2561,10 @@ declare namespace GatsbyTypes {
     readonly rule: Maybe<SitePluginPluginOptionsRule>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchema>;
     readonly trackingIds: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+    readonly stylesProvider: Maybe<SitePluginPluginOptionsStylesProvider>;
+    readonly fonts: Maybe<SitePluginPluginOptionsFonts>;
+    readonly modules: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+    readonly webFontsConfig: Maybe<SitePluginPluginOptionsWebFontsConfig>;
     readonly pathCheck: Maybe<Scalars['Boolean']>;
   };
 
@@ -2608,7 +2614,35 @@ declare namespace GatsbyTypes {
     readonly rule: Maybe<SitePluginPluginOptionsRuleFilterInput>;
     readonly emitSchema: Maybe<SitePluginPluginOptionsEmitSchemaFilterInput>;
     readonly trackingIds: Maybe<StringQueryOperatorInput>;
+    readonly stylesProvider: Maybe<SitePluginPluginOptionsStylesProviderFilterInput>;
+    readonly fonts: Maybe<SitePluginPluginOptionsFontsFilterInput>;
+    readonly modules: Maybe<StringQueryOperatorInput>;
+    readonly webFontsConfig: Maybe<SitePluginPluginOptionsWebFontsConfigFilterInput>;
     readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
+  };
+
+  type SitePluginPluginOptionsFonts = {
+    readonly google: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFontsGoogle>>>;
+  };
+
+  type SitePluginPluginOptionsFontsFilterInput = {
+    readonly google: Maybe<SitePluginPluginOptionsFontsGoogleFilterListInput>;
+  };
+
+  type SitePluginPluginOptionsFontsGoogle = {
+    readonly family: Maybe<Scalars['String']>;
+    readonly variants: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+    readonly subsets: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  };
+
+  type SitePluginPluginOptionsFontsGoogleFilterInput = {
+    readonly family: Maybe<StringQueryOperatorInput>;
+    readonly variants: Maybe<StringQueryOperatorInput>;
+    readonly subsets: Maybe<StringQueryOperatorInput>;
+  };
+
+  type SitePluginPluginOptionsFontsGoogleFilterListInput = {
+    readonly elemMatch: Maybe<SitePluginPluginOptionsFontsGoogleFilterInput>;
   };
 
   type SitePluginPluginOptionsOptions = {
@@ -2627,6 +2661,46 @@ declare namespace GatsbyTypes {
 
   type SitePluginPluginOptionsRuleFilterInput = {
     readonly include: Maybe<StringQueryOperatorInput>;
+  };
+
+  type SitePluginPluginOptionsStylesProvider = {
+    readonly injectFirst: Maybe<Scalars['Boolean']>;
+  };
+
+  type SitePluginPluginOptionsStylesProviderFilterInput = {
+    readonly injectFirst: Maybe<BooleanQueryOperatorInput>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfig = {
+    readonly fonts: Maybe<SitePluginPluginOptionsWebFontsConfigFonts>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFilterInput = {
+    readonly fonts: Maybe<SitePluginPluginOptionsWebFontsConfigFontsFilterInput>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFonts = {
+    readonly google: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsWebFontsConfigFontsGoogle>>>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFontsFilterInput = {
+    readonly google: Maybe<SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterListInput>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFontsGoogle = {
+    readonly family: Maybe<Scalars['String']>;
+    readonly variants: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+    readonly subsets: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterInput = {
+    readonly family: Maybe<StringQueryOperatorInput>;
+    readonly variants: Maybe<StringQueryOperatorInput>;
+    readonly subsets: Maybe<StringQueryOperatorInput>;
+  };
+
+  type SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterListInput = {
+    readonly elemMatch: Maybe<SitePluginPluginOptionsWebFontsConfigFontsGoogleFilterInput>;
   };
 
   type SitePluginSortInput = {
@@ -2681,12 +2755,6 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars['Int']>;
   };
 
-  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>;
-
-  type PagesQueryQuery = {
-    readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
-  };
-
   type CarsImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type CarsImgQuery = {
@@ -2700,6 +2768,16 @@ declare namespace GatsbyTypes {
   type JobPlaceholderImgQueryVariables = Exact<{ [key: string]: never }>;
 
   type JobPlaceholderImgQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
+      }>;
+    }>;
+  };
+
+  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
+
+  type LogoImgQuery = {
     readonly file: Maybe<{
       readonly childImageSharp: Maybe<{
         readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
@@ -2731,16 +2809,6 @@ declare namespace GatsbyTypes {
         };
       }>;
     };
-  };
-
-  type LogoImgQueryVariables = Exact<{ [key: string]: never }>;
-
-  type LogoImgQuery = {
-    readonly file: Maybe<{
-      readonly childImageSharp: Maybe<{
-        readonly fluid: Maybe<GatsbyImageSharpFluid_noBase64Fragment>;
-      }>;
-    }>;
   };
 
   type RealizationsImgsQueryVariables = Exact<{ [key: string]: never }>;

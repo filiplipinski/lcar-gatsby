@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Typography } from '@material-ui/core';
+import { Typography, Grow } from '@material-ui/core';
 import Img from 'gatsby-image';
 import { Container } from 'components/container/Container';
 
@@ -12,7 +12,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 1200, quality: 90) {
+            fluid(maxWidth: 1400, quality: 85) {
               ...GatsbyImageSharpFluid_noBase64
               originalName
             }
@@ -22,6 +22,8 @@ export const query = graphql`
     }
   }
 `;
+
+const labels = ['Profesjonalizm', 'Staranność', 'Dokładność'];
 
 export const HeroBanner = () => {
   const styles = useStyles();
@@ -46,18 +48,14 @@ export const HeroBanner = () => {
     <div id="start" className={styles.container}>
       <Container>
         <div className={styles.textBox}>
-          <Typography variant="h2" color="secondary" className={styles.textLine}>
-            <span className={styles.number}>1</span>
-            <span className={styles.dot}>.</span> Profesjonalizm
-          </Typography>
-          <Typography variant="h2" color="secondary" className={styles.textLine}>
-            <span className={styles.number}>2</span>
-            <span className={styles.dot}>.</span> Staranność
-          </Typography>
-          <Typography variant="h2" color="secondary" className={styles.textLine}>
-            <span className={styles.number}>3</span>
-            <span className={styles.dot}>.</span> Dokładność
-          </Typography>
+          {labels.map((label, index) => (
+            <Grow in timeout={(index + 1) * 400} style={{ transformOrigin: '0 50%' }} key={label}>
+              <Typography variant="h2" color="secondary" className={styles.textLine}>
+                <span className={styles.number}>{index + 1}</span>
+                <span className={styles.dot}>.</span> {label}
+              </Typography>
+            </Grow>
+          ))}
         </div>
       </Container>
 

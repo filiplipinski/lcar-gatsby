@@ -17,7 +17,7 @@ export const query = graphql`
   query JobPlaceholderImg {
     file(name: { eq: "job-placeholder" }) {
       childImageSharp {
-        fluid(maxWidth: 350, quality: 90) {
+        fluid(maxWidth: 500, quality: 80) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }

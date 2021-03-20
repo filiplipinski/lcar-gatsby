@@ -118,8 +118,24 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: { trackingIds: ['G-S90LRKRNNL'] },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-material-ui',
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Sen`,
+                variants: [`400`, `700`, `800`],
+                subsets: ['latin', 'latin-ext'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    // 'gatsby-plugin-offline',
+    // TODO: wylaczone poki co, bo sie gubia style na produkcji
     'gatsby-plugin-smoothscroll',
   ],
 };
